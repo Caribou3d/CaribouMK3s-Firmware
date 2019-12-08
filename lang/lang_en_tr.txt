@@ -176,7 +176,7 @@
 
 #MSG_CRASHDETECT_ON
 "Crash det.   [on]"
-"Carpma test [on]"
+"Carpma test  [on]"
 
 #
 "Choose a filament for the First Layer Calibration and select it in the on-screen menu."
@@ -184,7 +184,7 @@
 
 #MSG_CRASHDETECT_NA
 "Crash det.  [N/A]"
-"Carpma test [--]"
+"Carpma test  [--]"
 
 #MSG_CRASHDETECT_OFF
 "Crash det.  [off]"
@@ -276,11 +276,11 @@
 
 #MSG_FSENS_AUTOLOAD_ON c=17 r=1
 "F. autoload  [on]"
-"F. oto yuk. [on]"
+"F. oto yuk.  [on]"
 
 #MSG_FSENS_AUTOLOAD_NA c=17 r=1
 "F. autoload [N/A]"
-"F. oto yuk. [--]"
+"F. oto yuk.  [--]"
 
 #MSG_FSENS_AUTOLOAD_OFF c=17 r=1
 "F. autoload [off]"
@@ -300,11 +300,11 @@
 
 #MSG_FANS_CHECK_ON c=17 r=1
 "Fans check   [on]"
-"Fan test [on]"
+"Fan test     [on]"
 
 #MSG_FANS_CHECK_OFF c=17 r=1
 "Fans check  [off]"
-"Fan test [off]"
+"Fan test    [off]"
 
 #MSG_FSENSOR_ON
 "Fil. sensor  [on]"
@@ -376,7 +376,7 @@
 
 #MSG_BED_CORRECTION_FRONT c=14 r=1
 "Front side[um]"
-"On yan[um]"
+"On yan    [um]"
 
 #MSG_SELFTEST_FANS
 "Front/left fans"
@@ -424,7 +424,7 @@
 
 #MSG_SELFTEST_CHECK_BED c=20
 "Checking bed     "
-"Tabla kontrol     "
+"Tabla kontrol    "
 
 #MSG_SELFTEST_CHECK_ENDSTOPS c=20
 "Checking endstops"
@@ -432,11 +432,11 @@
 
 #MSG_SELFTEST_CHECK_HOTEND c=20
 "Checking hotend  "
-"Nozle kontrol  "
+"Nozle kontrol    "
 
 #MSG_SELFTEST_CHECK_FSENSOR c=20
 "Checking sensors "
-"Sensor kontrol "
+"Sensor kontrol   "
 
 #MSG_SELFTEST_CHECK_X c=20
 "Checking X axis  "
@@ -508,7 +508,7 @@
 
 #MSG_BED_CORRECTION_LEFT c=14 r=1
 "Left side [um]"
-"Sol taraf[um]"
+"Sol taraf [um]"
 
 #
 "Lin. correction"
@@ -572,7 +572,7 @@
 
 #
 "MMU load failed     "
-"MMU basarisiz     "
+"MMU basarisiz       "
 
 #
 "MMU load fails"
@@ -584,11 +584,11 @@
 
 #MSG_STEALTH_MODE_OFF
 "Mode     [Normal]"
-"Mod [Normal]"
+"Mod      [Normal]"
 
 #MSG_SILENT_MODE_ON
 "Mode     [silent]"
-"Mod [Sessiz]"
+"Mod      [Sessiz]"
 
 #
 "MMU needs user attention."
@@ -600,15 +600,15 @@
 
 #MSG_STEALTH_MODE_ON
 "Mode    [Stealth]"
-"Mod    [Gizli]"
+"Mod       [Gizli]"
 
 #MSG_AUTO_MODE_ON
 "Mode [auto power]"
-"Mod [oto guc]"
+"Mod     [oto guc]"
 
 #MSG_SILENT_MODE_OFF
 "Mode [high power]"
-"Mod [yuks. guc]"
+"Mod   [yuks. guc]"
 
 #
 "MMU2 connected"
@@ -915,11 +915,11 @@
 
 #MSG_BED_CORRECTION_REAR c=14 r=1
 "Rear side [um]"
-"Arka yan [um]"
+"Arka yan  [um]"
 
 #MSG_RECOVERING_PRINT c=20 r=1
 "Recovering print    "
-"Baski kurtariliyor    "
+"Baski kurtariliyor  "
 
 #MSG_REMOVE_OLD_FILAMENT c=20 r=4
 "Remove old filament and press the knob to start loading new filament."
@@ -987,11 +987,11 @@
 
 #MSG_SELFTEST_START c=20
 "Self test start  "
-"Donanim Test basladi "
+"Donanim Test basladi"
 
 #MSG_SELFTEST
 "Selftest         "
-"Genel Test         "
+"Genel Test       "
 
 #MSG_SELFTEST_ERROR
 "Selftest error !"
@@ -999,7 +999,7 @@
 
 #MSG_SELFTEST_FAILED c=20
 "Selftest failed  "
-"Genel Test basarisiz "
+"Genel Test basarisiz"
 
 #MSG_FORCE_SELFTEST c=20 r=8
 "Selftest will be run to calibrate accurate sensorless rehoming."
@@ -1031,11 +1031,11 @@
 
 #MSG_SORT_NONE c=17 r=1
 "Sort       [none]"
-"Siralama [yok]"
+"Siralama    [yok]"
 
 #MSG_SORT_TIME c=17 r=1
 "Sort       [time]"
-"Siralama [tarih]"
+"Siralama  [tarih]"
 
 #
 "Severe skew:"
@@ -1043,7 +1043,7 @@
 
 #MSG_SORT_ALPHA c=17 r=1
 "Sort   [alphabet]"
-"Sort [alfabetik]"
+"Sort  [alfabetik]"
 
 #MSG_SORTING c=20 r=1
 "Sorting files"
@@ -1051,7 +1051,7 @@
 
 #MSG_SOUND_LOUD c=17 r=1
 "Sound      [loud]"
-"Ses [yuksek]"
+"Ses      [yuksek]"
 
 #
 "Slight skew:"
@@ -1059,7 +1059,7 @@
 
 #MSG_SOUND_MUTE c=17 r=1
 "Sound      [mute]"
-"Ses [sessiz]"
+"Ses      [sessiz]"
 
 #
 "Some problem encountered, Z-leveling enforced ..."
@@ -1067,11 +1067,11 @@
 
 #MSG_SOUND_ONCE c=17 r=1
 "Sound      [once]"
-"Ses [bir defa]"
+"Ses    [bir defa]"
 
 #MSG_SOUND_SILENT c=17 r=1
 "Sound    [silent]"
-"Ses [sessiz]"
+"Ses      [sessiz]"
 
 #MSG_SPEED
 "Speed"
@@ -1087,7 +1087,7 @@
 
 #MSG_STATISTICS
 "Statistics  "
-"Istatistikler "
+"Istatistikler"
 
 #MSG_STOP_PRINT
 "Stop print"
@@ -1111,11 +1111,11 @@
 
 #MSG_TEMP_CALIBRATION c=20 r=1
 "Temp. cal.          "
-"Isi kal.          "
+"Isi kal.            "
 
 #MSG_TEMP_CALIBRATION_ON c=20 r=1
 "Temp. cal.   [on]"
-"Isi cal. [acik]"
+"Isi cal.   [acik]"
 
 #
 "Select temperature which matches your material."
@@ -1311,7 +1311,7 @@
 
 #MSG_OFF
 " [off]"
-" [kapali]"
+" [off]"
 
 #
 "Back"
@@ -1331,15 +1331,15 @@
 
 #
 "Firmware   [none]"
-"Yazilim [yok]"
+"Yazilim     [yok]"
 
 #
 "Firmware [strict]"
-"Yazilim [kati]"
+"Yazilim    [kati]"
 
 #
 "Firmware   [warn]"
-"Yazilim [uyari]"
+"Yazilim   [uyari]"
 
 #
 "HW Setup"
@@ -1351,7 +1351,7 @@
 
 #
 "Magnets comp.[N/A]"
-"Magnet telafi[--]"
+"Magnet telafi [--]"
 
 #
 "Magnets comp.[Off]"
@@ -1359,7 +1359,7 @@
 
 #
 "Magnets comp. [On]"
-"Magnet telafi[on]"
+"Magnet telafi [on]"
 
 #
 "Mesh         [3x3]"
@@ -1379,11 +1379,11 @@
 
 #
 "MMU Mode [Normal]"
-"MMU Mod [Normal]"
+"MMU Mod  [Normal]"
 
 #
 "MMU Mode[Stealth]"
-"MMU Mod[Gizli]"
+"MMU Mod   [Gizli]"
 
 #
 "Mode change in progress ..."
@@ -1391,35 +1391,35 @@
 
 #
 "Model      [none]"
-"Model [yok]"
+"Model       [yok]"
 
 #
 "Model    [strict]"
-"Model [kati]"
+"Model      [kati]"
 
 #
 "Model      [warn]"
-"Model [uyari]"
+"Model     [uyari]"
 
 #
 "Nozzle d.  [0.25]"
-"Nozul c. [0.25]"
+"Nozul c.   [0.25]"
 
 #
 "Nozzle d.  [0.40]"
-"Nozul c. [0.40]"
+"Nozul c.   [0.40]"
 
 #
 "Nozzle d.  [0.60]"
-"Nozul c. [0.60]"
+"Nozul c.   [0.60]"
 
 #
 "Nozzle     [none]"
-"Nozul     [yok]"
+"Nozul       [yok]"
 
 #
 "Nozzle   [strict]"
-"Nozul   [kati]"
+"Nozul      [kati]"
 
 #
 "Nozzle     [warn]"
@@ -1487,7 +1487,7 @@
 
 #
 "Sound    [assist]"
-"Ses [yardim]"
+"Ses      [yardim]"
 
 #
 "Steel sheets"
@@ -1499,13 +1499,13 @@
 
 #
 "Z-probe nr.    [1]"
-"Z-olcum [1]"
+"Z-olcum        [1]"
 
 #
 "Z-probe nr.    [3]"
-"Z-olcum [3]"
+"Z-olcum        [3]"
 
 #
 "Z-probe nr.    [5]"
-"Z-olcum [5]"
+"Z-olcum        [5]"
 
