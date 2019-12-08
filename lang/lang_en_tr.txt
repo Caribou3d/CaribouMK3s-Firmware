@@ -1,6 +1,6 @@
 #
 "[%.7s]Live adj. Z\x0avalue set, continue\x0aor start from zero?\x0a%cContinue%cReset"
-"[%.7s]Z seviyesi\x0ayarlandi, devam\x0aveya sifirla?\x0a%cDevam%cSifirla"
+"[%.7s]Z seviye\x0ayarlandi, devam\x0aveya sifirla?\x0a%cDevam%cSifirla"
 
 #MSG_IMPROVE_BED_OFFSET_AND_SKEW_LINE2 c=14
 " of 4"
@@ -32,7 +32,7 @@
 
 #MSG_SELFTEST_CHECK_ALLCORRECT c=20
 "All correct      "
-"Hersey yolunda   "
+"Hersey yolunda      "
 
 #MSG_WIZARD_DONE c=20 r=8
 "All is done. Happy printing!"
@@ -52,11 +52,11 @@
 
 #MSG_AUTO_DEPLETE_ON c=17 r=1
 "SpoolJoin    [on]"
-"MakaraEkle.  [on]"
+"MakaraEkle. [on]"
 
 #
 "SpoolJoin   [N/A]"
-"MakaraEkle.   [?]"
+"MakaraEkle. [--]"
 
 #MSG_AUTO_DEPLETE_OFF c=17 r=1
 "SpoolJoin   [off]"
@@ -64,7 +64,7 @@
 
 #MSG_AUTO_HOME
 "Auto home"
-"Oto sifirlama"
+"Eksen sifirla"
 
 #MSG_AUTOLOAD_FILAMENT c=17
 "AutoLoad filament"
@@ -80,7 +80,7 @@
 
 #MSG_SELFTEST_AXIS_LENGTH
 "Axis length"
-"Eksen uzunlugu"
+"Eksen boyu"
 
 #MSG_SELFTEST_AXIS
 "Axis"
@@ -88,7 +88,7 @@
 
 #MSG_SELFTEST_BEDHEATER
 "Bed / Heater"
-"Tabla/Nozzle"
+"Tabla / Nozul"
 
 #MSG_BED_DONE
 "Bed done"
@@ -120,15 +120,15 @@
 
 #
 "Calibrating home"
-"Sifirlama kalibresi"
+"Sifira ayarlaniyor"
 
 #MSG_CALIBRATE_BED
 "Calibrate XYZ"
-"XYZ Kalibresi"
+"XYZ Kalibre"
 
 #MSG_HOMEYZ
 "Calibrate Z"
-"Z Kalibresi"
+"Z Kalibre"
 
 #MSG_CALIBRATE_PINDA c=17 r=1
 "Calibrate"
@@ -140,15 +140,15 @@
 
 #MSG_CALIBRATE_Z_AUTO c=20 r=2
 "Calibrating Z"
-"Z Kaibre ediliyor"
+"Z Eksen Kalibre ediliyor"
 
 #MSG_MOVE_CARRIAGE_TO_THE_TOP_Z c=20 r=8
 "Calibrating Z. Rotate the knob to move the Z carriage up to the end stoppers. Click when done."
-"Z Kalibre. Anahtari cevirerek Z tasiyicilari en uste kadar cikariniz ve butona basiniz."
+"Z Eksen Kalibre ediliyor. Anahtari cevirerek Z tasiyicilari tam yukari cikariniz ve butona basiniz."
 
 #MSG_HOMEYZ_DONE
 "Calibration done"
-"Kalibrasyon tamamlandi"
+"Kalibrasyon tamam"
 
 #MSG_MENU_CALIBRATION
 "Calibration"
@@ -168,15 +168,15 @@
 
 #MSG_COOLDOWN
 "Cooldown"
-"Sogutuluyor"
+"Sogutma"
 
 #
 "Copy selected language?"
-"Secilen dil kopyalansin mi?"
+"Bu dil kopyalansin mi?"
 
 #MSG_CRASHDETECT_ON
 "Crash det.   [on]"
-"Carpisma test. [on]"
+"Carpma test [on]"
 
 #
 "Choose a filament for the First Layer Calibration and select it in the on-screen menu."
@@ -184,11 +184,11 @@
 
 #MSG_CRASHDETECT_NA
 "Crash det.  [N/A]"
-"Carpisma test. [N/A]"
+"Carpma test [--]"
 
 #MSG_CRASHDETECT_OFF
 "Crash det.  [off]"
-"Carpisma test. [off]"
+"Carpma test [off]"
 
 #MSG_CRASH_DETECTED c=20 r=1
 "Crash detected."
@@ -196,11 +196,11 @@
 
 #
 "Crash detected. Resume print?"
-"Carpisma tespiti. Baski devam?"
+"Carpisma tespiti. Devam?"
 
 #
 "Crash"
-"Carpisma"
+"Carpma"
 
 #MSG_CURRENT c=19 r=1
 "Current"
@@ -212,15 +212,15 @@
 
 #MSG_DISABLE_STEPPERS
 "Disable steppers"
-"Motorlar devre disi"
+"Motor iptal"
 
 #MSG_BABYSTEP_Z_NOT_SET c=20 r=12
 "Distance between tip of the nozzle and the bed surface has not been set yet. Please follow the manual, chapter First steps, section First layer calibration."
-"Nozzle ucu ile tabla arasindaki mesafe henuz ayarlanmadi. Lutfen kilavuzdaki ilk adim kismi, ilk kalibre bolumunu uygulayin."
+"Nozul ucu ile tabla arasindaki mesafe henuz ayarlanmadi. Lutfen kilavuzdaki ilk adim kismi, ilk kalibre bolumunu uygulayin."
 
 #MSG_WIZARD_REPEAT_V2_CAL c=20 r=7
 "Do you want to repeat last step to readjust distance between nozzle and heatbed?"
-"Nozzle ve tabla arasindaki mesafeyi yeniden ayarlamak icin son adimi tekrarlamak istiyor musunuz?"
+"Nozul ve tabla arasindaki mesafeyi yeniden ayarlamak icin son adimi tekrarlamak istiyor musunuz?"
 
 #MSG_EXTRUDER_CORRECTION c=10
 "E-correct:"
@@ -232,7 +232,7 @@
 
 #MSG_EJECTING_FILAMENT c=20 r=1
 "Ejecting filament"
-"Filament cikariliyor"
+"Filament cikiyor"
 
 #MSG_SELFTEST_ENDSTOP_NOTHIT c=20 r=1
 "Endstop not hit"
@@ -276,11 +276,11 @@
 
 #MSG_FSENS_AUTOLOAD_ON c=17 r=1
 "F. autoload  [on]"
-"F. oto yuk.  [on]"
+"F. oto yuk. [on]"
 
 #MSG_FSENS_AUTOLOAD_NA c=17 r=1
 "F. autoload [N/A]"
-"F. oto yuk. [N/A]"
+"F. oto yuk. [--]"
 
 #MSG_FSENS_AUTOLOAD_OFF c=17 r=1
 "F. autoload [off]"
@@ -300,11 +300,11 @@
 
 #MSG_FANS_CHECK_ON c=17 r=1
 "Fans check   [on]"
-"Fan test     [on]"
+"Fan test [on]"
 
 #MSG_FANS_CHECK_OFF c=17 r=1
 "Fans check  [off]"
-"Fan test    [off]"
+"Fan test [off]"
 
 #MSG_FSENSOR_ON
 "Fil. sensor  [on]"
@@ -312,7 +312,7 @@
 
 #MSG_FSENSOR_NA
 "Fil. sensor [N/A]"
-"\x00"
+"Fil. sensor  [--]"
 
 #MSG_FSENSOR_OFF
 "Fil. sensor [off]"
@@ -320,11 +320,11 @@
 
 #
 "Filam. runouts"
-"Fil. bitme"
+"Fil.bitme"
 
 #MSG_FILAMENT_CLEAN c=20 r=2
 "Filament extruding & with correct color?"
-"Fil. akiyor ve rengi dogru mu?"
+"Filament dogru renkte akiyor mu?"
 
 #MSG_NOT_LOADED c=19
 "Filament not loaded"
@@ -376,7 +376,7 @@
 
 #MSG_BED_CORRECTION_FRONT c=14 r=1
 "Front side[um]"
-"On yan    [um]"
+"On yan[um]"
 
 #MSG_SELFTEST_FANS
 "Front/left fans"
@@ -468,7 +468,7 @@
 
 #MSG_WIZARD_Z_CAL c=20 r=8
 "I will run z calibration now."
-"Simdi z kalibrasyonu yapacagim."
+"Simdi z eksen kalibrasyonu yapacagim."
 
 #MSG_WATCH
 "Info screen"
@@ -488,7 +488,7 @@
 
 #
 "Last print failures"
-"Son baski basarisiz"
+"Basarisiz baskilar"
 
 #
 "If you have additional steel sheets, calibrate their presets in Settings - HW Setup - Steel sheets."
@@ -500,7 +500,7 @@
 
 #MSG_SELFTEST_EXTRUDER_FAN c=20
 "Left hotend fan?"
-"Sol fan?"
+"Sol Nozzle fan?"
 
 #
 "Left"
@@ -508,7 +508,7 @@
 
 #MSG_BED_CORRECTION_LEFT c=14 r=1
 "Left side [um]"
-"Sol taraf [um]"
+"Sol taraf[um]"
 
 #
 "Lin. correction"
@@ -536,7 +536,7 @@
 
 #
 "Load to nozzle"
-"Nozzle a yukle"
+"Nozul a yukle"
 
 #MSG_M117_V2_CALIBRATION c=25 r=1
 "M117 First layer cal."
@@ -572,11 +572,11 @@
 
 #
 "MMU load failed     "
-"MMU yukleme basarisiz     "
+"MMU basarisiz     "
 
 #
 "MMU load fails"
-"MMU yukleme basarisiz"
+"MMU hatalari"
 
 #MSG_MMU_OK_RESUMING c=20 r=4
 "MMU OK. Resuming..."
@@ -584,15 +584,15 @@
 
 #MSG_STEALTH_MODE_OFF
 "Mode     [Normal]"
-"Mod      [Normal]"
+"Mod [Normal]"
 
 #MSG_SILENT_MODE_ON
 "Mode     [silent]"
-"Mod      [Sessiz]"
+"Mod [Sessiz]"
 
 #
 "MMU needs user attention."
-"MMU kullanici mudahalesi gerektiriyor."
+"MMU mudahale gerektiriyor."
 
 #
 "MMU power fails"
@@ -600,15 +600,15 @@
 
 #MSG_STEALTH_MODE_ON
 "Mode    [Stealth]"
-"Mod       [Gizli]"
+"Mod    [Gizli]"
 
 #MSG_AUTO_MODE_ON
 "Mode [auto power]"
-"Mod     [oto guc]"
+"Mod [oto guc]"
 
 #MSG_SILENT_MODE_OFF
 "Mode [high power]"
-"Mod    [yuk. guc]"
+"Mod [yuks. guc]"
 
 #
 "MMU2 connected"
@@ -656,7 +656,7 @@
 
 #
 "New firmware version available:"
-"Yeni surum yazilim mevcut:"
+"Yeni yazilim mevcut:"
 
 #MSG_SELFTEST_FAN_NO c=19
 "Not spinning"
@@ -672,11 +672,11 @@
 
 #MSG_NOZZLE
 "Nozzle"
-"\x00"
+"Nozul"
 
 #MSG_DEFAULT_SETTINGS_LOADED c=20 r=4
 "Old settings found. Default PID, Esteps etc. will be set."
-"Eski ayarlar bulundu. Varsayilan PID, Estep vb. ayarlanacaktir."
+"Eski ayarlar bulundu. Varsayilan PID, Estep vb. ayarlanacak."
 
 #
 "Now remove the test print from steel sheet."
@@ -684,7 +684,7 @@
 
 #
 "Nozzle FAN"
-"\x00"
+"Nozul FAN"
 
 #MSG_PAUSE_PRINT
 "Pause print"
@@ -700,7 +700,7 @@
 
 #MSG_PID_EXTRUDER c=17 r=1
 "PID calibration"
-"PID kalibrasyon"
+"PID kalibre"
 
 #MSG_PINDA_PREHEAT c=20 r=1
 "PINDA Heating"
@@ -708,7 +708,7 @@
 
 #MSG_PAPER c=20 r=8
 "Place a sheet of paper under the nozzle during the calibration of first 4 points. If the nozzle catches the paper, power off the printer immediately."
-"Ilk 4 noktanin kalibrasyonu sirasinda nozzle altina bir sayfa kagit yerlestirin. Nozzle kagidi cekerse, yaziciyi hemen kapatin."
+"Ilk 4 noktanin kalibrasyonu sirasinda nozzle altina bir sayfa kagit yerlestirin. Nozul kagidi cekerse, yaziciyi hemen kapatin."
 
 #MSG_WIZARD_CLEAN_HEATBED c=20 r=8
 "Please clean heatbed and then press the knob."
@@ -720,7 +720,7 @@
 
 #MSG_SELFTEST_PLEASECHECK
 "Please check :"
-"Lutfen kontrol edin:"
+"Lutfen kont. edin:"
 
 #MSG_WIZARD_CALIBRATION_FAILED c=20 r=8
 "Please check our handbook and fix the problem. Then resume the Wizard by rebooting the printer."
@@ -764,11 +764,11 @@
 
 #
 "Please remove shipping helpers first."
-"Lutfen once tasima koruyuculari cikarin."
+"Lutfen tasima koruyuculari cikarin."
 
 #MSG_PREHEAT_NOZZLE c=20
 "Preheat the nozzle!"
-"Nozzle on isitma!"
+"Nozul on isitma!"
 
 #MSG_PREHEAT
 "Preheat"
@@ -776,7 +776,7 @@
 
 #MSG_WIZARD_HEATING c=20 r=3
 "Preheating nozzle. Please wait."
-"Nozzle isitiliyor. Lutfen bekleyin."
+"Nozul isitiliyor. Lutfen bekleyin."
 
 #
 "Please upgrade."
@@ -784,7 +784,7 @@
 
 #MSG_PRESS_TO_PREHEAT c=20 r=4
 "Press knob to preheat nozzle and continue."
-"Nozzle isitma icin butona basin ve devam edin."
+"Nozul isitma icin butona basin ve devam edin."
 
 #
 "Power failures"
@@ -796,11 +796,11 @@
 
 #
 "Preheating to load"
-"Yukleme icin isitiliyor"
+"Yukl. icin isitiliyor"
 
 #
 "Preheating to unload"
-"Cikarma icin isitiliyor"
+"Cikarma icin isitma"
 
 #MSG_SELFTEST_PRINT_FAN_SPEED c=18
 "Print fan:"
@@ -820,7 +820,7 @@
 
 #
 "Press the knob to resume nozzle temperature."
-"Nozzle isitmayi devam ettirmek icin butona basin."
+"Nozul isitmayi devam ettirmek icin butona basin."
 
 #MSG_FOLLOW_CALIBRATION_FLOW c=20 r=8
 "Printer has not been calibrated yet. Please follow the manual, chapter First steps, section Calibration flow."
@@ -915,7 +915,7 @@
 
 #MSG_BED_CORRECTION_REAR c=14 r=1
 "Rear side [um]"
-"Arka yan  [um]"
+"Arka yan [um]"
 
 #MSG_RECOVERING_PRINT c=20 r=1
 "Recovering print    "
@@ -947,7 +947,7 @@
 
 #MSG_BED_CORRECTION_RIGHT c=14 r=1
 "Right side[um]"
-"Sag yan   [um]"
+"Sag yan[um]"
 
 #MSG_SECOND_SERIAL_ON c=17 r=1
 "RPi port     [on]"
@@ -975,7 +975,7 @@
 
 #MSG_FIND_BED_OFFSET_AND_SKEW_LINE1 c=60
 "Searching bed calibration point"
-"Tabla kalibre noktasi araniyor"
+"Aranan tabla kalibre noktasi"
 
 #MSG_LANGUAGE_SELECT
 "Select language"
@@ -991,15 +991,15 @@
 
 #MSG_SELFTEST
 "Selftest         "
-"Donanim Test         "
+"Genel Test         "
 
 #MSG_SELFTEST_ERROR
 "Selftest error !"
-"Donanim Test hatasi!"
+"Genel Test hatasi!"
 
 #MSG_SELFTEST_FAILED c=20
 "Selftest failed  "
-"Donanim Test basarisiz "
+"Genel Test basarisiz "
 
 #MSG_FORCE_SELFTEST c=20 r=8
 "Selftest will be run to calibrate accurate sensorless rehoming."
@@ -1031,11 +1031,11 @@
 
 #MSG_SORT_NONE c=17 r=1
 "Sort       [none]"
-"Siralama    [yok]"
+"Siralama [yok]"
 
 #MSG_SORT_TIME c=17 r=1
 "Sort       [time]"
-"Siralama  [tarih]"
+"Siralama [tarih]"
 
 #
 "Severe skew:"
@@ -1043,7 +1043,7 @@
 
 #MSG_SORT_ALPHA c=17 r=1
 "Sort   [alphabet]"
-"Sort  [alfabetik]"
+"Sort [alfabetik]"
 
 #MSG_SORTING c=20 r=1
 "Sorting files"
@@ -1051,7 +1051,7 @@
 
 #MSG_SOUND_LOUD c=17 r=1
 "Sound      [loud]"
-"Ses      [yuksek]"
+"Ses [yuksek]"
 
 #
 "Slight skew:"
@@ -1059,7 +1059,7 @@
 
 #MSG_SOUND_MUTE c=17 r=1
 "Sound      [mute]"
-"Ses      [sessiz]"
+"Ses [sessiz]"
 
 #
 "Some problem encountered, Z-leveling enforced ..."
@@ -1067,11 +1067,11 @@
 
 #MSG_SOUND_ONCE c=17 r=1
 "Sound      [once]"
-"Ses    [bir defa]"
+"Ses [bir defa]"
 
 #MSG_SOUND_SILENT c=17 r=1
 "Sound    [silent]"
-"Ses      [sessiz]"
+"Ses [sessiz]"
 
 #MSG_SPEED
 "Speed"
@@ -1115,7 +1115,7 @@
 
 #MSG_TEMP_CALIBRATION_ON c=20 r=1
 "Temp. cal.   [on]"
-"Isi cal.   [acik]"
+"Isi cal. [acik]"
 
 #
 "Select temperature which matches your material."
@@ -1147,7 +1147,7 @@
 
 #MSG_FOLLOW_Z_CALIBRATION_FLOW c=20 r=4
 "There is still a need to make Z calibration. Please follow the manual, chapter First steps, section Calibration flow."
-"Hala Z kalibre ihtiyaci bulunmaktadir. Lutfen kilavuzda ilk adimlar bolumu kalibrasyon kismina bakiniz."
+"Z kalibre ihtiyaci bulunmaktadir. Lutfen kilavuzun kalibrasyon kismina bakiniz."
 
 #
 "Total filament"
@@ -1163,11 +1163,11 @@
 
 #
 "Unload"
-"Bosaltma"
+"Cikar"
 
 #
 "Total failures"
-"Toplam basarisizlik"
+"Toplam basarisiz"
 
 #
 "to load filament"
@@ -1179,11 +1179,11 @@
 
 #MSG_UNLOAD_FILAMENT c=17
 "Unload filament"
-"Filament bosalt"
+"Filament cikar"
 
 #MSG_UNLOADING_FILAMENT c=20 r=1
 "Unloading filament"
-"Fil. bosaltiliyor"
+"Fil. cikariliyor"
 
 #
 "Total"
@@ -1203,7 +1203,7 @@
 
 #MSG_USERWAIT
 "Wait for user..."
-"Kullanici bekleniyor..."
+"Eylem bekleniyor..."
 
 #MSG_WAITING_TEMP c=20 r=3
 "Waiting for nozzle and bed cooling"
@@ -1231,7 +1231,7 @@
 
 #MSG_UNLOAD_SUCCESSFUL c=20 r=2
 "Was filament unload successful?"
-"Filament duzgun sekilde bosaltildi mi?"
+"Filament duzgun sekilde cikarildi mi?"
 
 #MSG_SELFTEST_WIRINGERROR
 "Wiring error"
@@ -1283,7 +1283,7 @@
 
 #MSG_LOAD_ALL c=17
 "Load all"
-"Hepsini yukle"
+"Tumunu yukle"
 
 #
 "XYZ calibration failed. Bed calibration point was not found."
@@ -1299,7 +1299,7 @@
 
 #
 "Y distance from min"
-"Y noktasinin sifirdan uzakligi"
+"Y sifirdan uzaklik"
 
 #
 "The printer will start printing a zig-zag line. Rotate the knob until you reach the optimal height. Check the pictures in the handbook (Calibration chapter)."
@@ -1331,15 +1331,15 @@
 
 #
 "Firmware   [none]"
-"Yazilim     [yok]"
+"Yazilim [yok]"
 
 #
 "Firmware [strict]"
-"Yazilim    [kati]"
+"Yazilim [kati]"
 
 #
 "Firmware   [warn]"
-"Firmware  [uyari]"
+"Yazilim [uyari]"
 
 #
 "HW Setup"
@@ -1351,15 +1351,15 @@
 
 #
 "Magnets comp.[N/A]"
-"Miknatis telafi [N/A]"
+"Magnet telafi[--]"
 
 #
 "Magnets comp.[Off]"
-"Miknatis telafi [off]"
+"Magnet telafi[off]"
 
 #
 "Magnets comp. [On]"
-"Miknatis telafi [on]"
+"Magnet telafi[on]"
 
 #
 "Mesh         [3x3]"
@@ -1391,39 +1391,39 @@
 
 #
 "Model      [none]"
-"Model       [yok]"
+"Model [yok]"
 
 #
 "Model    [strict]"
-"Model      [kati]"
+"Model [kati]"
 
 #
 "Model      [warn]"
-"Model     [uyari]"
+"Model [uyari]"
 
 #
 "Nozzle d.  [0.25]"
-"Nozzle c.  [0.25]"
+"Nozul c. [0.25]"
 
 #
 "Nozzle d.  [0.40]"
-"Nozzle c.  [0.40]"
+"Nozul c. [0.40]"
 
 #
 "Nozzle d.  [0.60]"
-"Nozzle c.  [0.60]"
+"Nozul c. [0.60]"
 
 #
 "Nozzle     [none]"
-"Nozzle      [yok]"
+"Nozul     [yok]"
 
 #
 "Nozzle   [strict]"
-"Nozzle     [kati]"
+"Nozul   [kati]"
 
 #
 "Nozzle     [warn]"
-"Nozzle    [uyari]"
+"Nozul     [uyari]"
 
 #
 "G-code sliced for a different level. Continue?"
@@ -1455,11 +1455,11 @@
 
 #
 "Preheating to cut"
-"Kesmek icin isitiliyor"
+"Kesmek icin isit"
 
 #
 "Preheating to eject"
-"Cikarmak icin isitiliyor"
+"Cikarma icin isit"
 
 #
 "Printer nozzle diameter differs from the G-code. Continue?"
@@ -1487,7 +1487,7 @@
 
 #
 "Sound    [assist]"
-"Ses      [yardim]"
+"Ses [yardim]"
 
 #
 "Steel sheets"
@@ -1499,13 +1499,13 @@
 
 #
 "Z-probe nr.    [1]"
-"Z-olcum        [1]"
+"Z-olcum [1]"
 
 #
 "Z-probe nr.    [3]"
-"Z-olcum        [3]"
+"Z-olcum [3]"
 
 #
 "Z-probe nr.    [5]"
-"Z-olcum        [5]"
+"Z-olcum [5]"
 
