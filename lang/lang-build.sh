@@ -44,6 +44,7 @@ lang_code_hex_data()
   *it*) echo '\x74\x69' ;;
   *nl*) echo '\x6c\x6e' ;;
   *pl*) echo '\x6c\x70' ;;
+  *tr*) echo '\x72\x74' ;;
  esac
  echo '??'
 }
@@ -137,6 +138,7 @@ if [ "$1" = "all" ]; then
  generate_binary 'nl'
  generate_binary 'it'
  generate_binary 'pl'
+ generate_binary 'tr'
 else
  generate_binary $1
 fi

@@ -211,6 +211,7 @@ const char* lang_get_name_by_code(uint16_t code)
 	case LANG_CODE_IT: return _n("Italiano");
 	case LANG_CODE_NL: return _n("Nederlands");
 	case LANG_CODE_PL: return _n("Polski");
+	case LANG_CODE_TR: return _n("Turk");
 	}
 	return _n("??");
 }

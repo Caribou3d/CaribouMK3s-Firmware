@@ -222,7 +222,7 @@ BOARD_FILE_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/
 PF_BUILD_FILE_URL="https://github.com/3d-gussner/PF-build-env/releases/download/$BUILD_ENV/PF-build-env-$BUILD_ENV.zip"
 LIB="PrusaLibrary"
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-MULTI_LANGUAGE=("MULTI" "CZ" "DE" "ES" "FR" "IT" "NL" "PL")
+MULTI_LANGUAGE=("MULTI" "CZ" "DE" "ES" "FR" "IT" "NL" "PL" "TR")
 
 # List few useful data
 echo

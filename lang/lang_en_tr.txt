@@ -1,0 +1,1511 @@
+#
+"[%.7s]Live adj. Z\x0avalue set, continue\x0aor start from zero?\x0a%cContinue%cReset"
+"[%.7s]Z seviyesi\x0ayarlandi, devam\x0aveya sifirla?\x0a%cDevam%cSifirla"
+
+#MSG_IMPROVE_BED_OFFSET_AND_SKEW_LINE2 c=14
+" of 4"
+" / 4"
+
+#MSG_MEASURE_BED_REFERENCE_HEIGHT_LINE2 c=14
+" of 9"
+" / 9"
+
+#MSG_MEASURED_OFFSET
+"[0;0] point offset"
+"[0;0] nokta ofseti"
+
+#MSG_CRASH_DET_ONLY_IN_NORMAL c=20 r=4
+"Crash detection can\x0abe turned on only in\x0aNormal mode"
+"Carpma tespiti\x0asadece Normal\x0amodda acilabilir"
+
+#MSG_CRASH_DET_STEALTH_FORCE_OFF c=20 r=4
+"WARNING:\x0aCrash detection\x0adisabled in\x0aStealth mode"
+"UYARI:\x0aCarpma tespiti\x0aGizli modda\x0akapatilmistir"
+
+#
+">Cancel"
+">iptal"
+
+#MSG_BABYSTEPPING_Z c=15
+"Adjusting Z:"
+"Z seviyesi:"
+
+#MSG_SELFTEST_CHECK_ALLCORRECT c=20
+"All correct      "
+"Hersey yolunda   "
+
+#MSG_WIZARD_DONE c=20 r=8
+"All is done. Happy printing!"
+"Tamamlandi.\x0aiyi baskilar!"
+
+#
+"Ambient"
+"Ortam"
+
+#MSG_PRESS c=20
+"and press the knob"
+"ve butona basin"
+
+#MSG_CONFIRM_CARRIAGE_AT_THE_TOP c=20 r=2
+"Are left and right Z~carriages all up?"
+"Sol/Sag Z tasiyici tamamen yukarida mi?"
+
+#MSG_AUTO_DEPLETE_ON c=17 r=1
+"SpoolJoin    [on]"
+"MakaraEkle.  [on]"
+
+#
+"SpoolJoin   [N/A]"
+"MakaraEkle.   [?]"
+
+#MSG_AUTO_DEPLETE_OFF c=17 r=1
+"SpoolJoin   [off]"
+"MakaraEkle. [off]"
+
+#MSG_AUTO_HOME
+"Auto home"
+"Oto sifirlama"
+
+#MSG_AUTOLOAD_FILAMENT c=17
+"AutoLoad filament"
+"Fil. oto. yukleme"
+
+#MSG_AUTOLOADING_ONLY_IF_FSENS_ON c=20 r=4
+"Autoloading filament available only when filament sensor is turned on..."
+"Filament oto yukleme sadece filament sensor aktifken mumkundur..."
+
+#MSG_AUTOLOADING_ENABLED c=20 r=4
+"Autoloading filament is active, just press the knob and insert filament..."
+"Oto filament yukleme aktif. butona basin ve filamenti yerlestirin..."
+
+#MSG_SELFTEST_AXIS_LENGTH
+"Axis length"
+"Eksen uzunlugu"
+
+#MSG_SELFTEST_AXIS
+"Axis"
+"Eksen"
+
+#MSG_SELFTEST_BEDHEATER
+"Bed / Heater"
+"Tabla/Nozzle"
+
+#MSG_BED_DONE
+"Bed done"
+"Tabla ok"
+
+#MSG_BED_HEATING
+"Bed Heating"
+"Tabla Isitiliyor"
+
+#MSG_BED_CORRECTION_MENU
+"Bed level correct"
+"Tabla seviye dogru"
+
+#MSG_BED_LEVELING_FAILED_POINT_LOW c=20 r=4
+"Bed leveling failed. Sensor didnt trigger. Debris on nozzle? Waiting for reset."
+"Tabla seviye basarisiz. Sensor tetiklenmedi. Sifirlama bekleniyor."
+
+#MSG_BED
+"Bed"
+"Tabla"
+
+#MSG_MENU_BELT_STATUS c=15 r=1
+"Belt status"
+"Kayis durumu"
+
+#MSG_RECOVER_PRINT c=20 r=2
+"Blackout occurred. Recover print?"
+"Enerji kesintisi. Baski devam etsin mi?"
+
+#
+"Calibrating home"
+"Sifirlama kalibresi"
+
+#MSG_CALIBRATE_BED
+"Calibrate XYZ"
+"XYZ Kalibresi"
+
+#MSG_HOMEYZ
+"Calibrate Z"
+"Z Kalibresi"
+
+#MSG_CALIBRATE_PINDA c=17 r=1
+"Calibrate"
+"Kalibrasyon"
+
+#MSG_MOVE_CARRIAGE_TO_THE_TOP c=20 r=8
+"Calibrating XYZ. Rotate the knob to move the Z carriage up to the end stoppers. Click when done."
+"XYZ Kalibre. Anahtari cevirerek Z tasiyicilari en uste kadar cikariniz ve butona basiniz."
+
+#MSG_CALIBRATE_Z_AUTO c=20 r=2
+"Calibrating Z"
+"Z Kaibre ediliyor"
+
+#MSG_MOVE_CARRIAGE_TO_THE_TOP_Z c=20 r=8
+"Calibrating Z. Rotate the knob to move the Z carriage up to the end stoppers. Click when done."
+"Z Kalibre. Anahtari cevirerek Z tasiyicilari en uste kadar cikariniz ve butona basiniz."
+
+#MSG_HOMEYZ_DONE
+"Calibration done"
+"Kalibrasyon tamamlandi"
+
+#MSG_MENU_CALIBRATION
+"Calibration"
+"Kalibrasyon"
+
+#
+"Cancel"
+"Iptal"
+
+#MSG_SD_REMOVED
+"Card removed"
+"Kart cikarildi"
+
+#MSG_NOT_COLOR
+"Color not correct"
+"Renk dogru degil"
+
+#MSG_COOLDOWN
+"Cooldown"
+"Sogutuluyor"
+
+#
+"Copy selected language?"
+"Secilen dil kopyalansin mi?"
+
+#MSG_CRASHDETECT_ON
+"Crash det.   [on]"
+"Carpisma test. [on]"
+
+#
+"Choose a filament for the First Layer Calibration and select it in the on-screen menu."
+"\x00"
+
+#MSG_CRASHDETECT_NA
+"Crash det.  [N/A]"
+"Carpisma test. [N/A]"
+
+#MSG_CRASHDETECT_OFF
+"Crash det.  [off]"
+"Carpisma test. [off]"
+
+#MSG_CRASH_DETECTED c=20 r=1
+"Crash detected."
+"Carpisma tespiti."
+
+#
+"Crash detected. Resume print?"
+"Carpisma tespiti. Baski devam?"
+
+#
+"Crash"
+"Carpisma"
+
+#MSG_CURRENT c=19 r=1
+"Current"
+"Mevcut"
+
+#MSG_DATE c=17 r=1
+"Date:"
+"Tarih:"
+
+#MSG_DISABLE_STEPPERS
+"Disable steppers"
+"Motorlar devre disi"
+
+#MSG_BABYSTEP_Z_NOT_SET c=20 r=12
+"Distance between tip of the nozzle and the bed surface has not been set yet. Please follow the manual, chapter First steps, section First layer calibration."
+"Nozzle ucu ile tabla arasindaki mesafe henuz ayarlanmadi. Lutfen kilavuzdaki ilk adim kismi, ilk kalibre bolumunu uygulayin."
+
+#MSG_WIZARD_REPEAT_V2_CAL c=20 r=7
+"Do you want to repeat last step to readjust distance between nozzle and heatbed?"
+"Nozzle ve tabla arasindaki mesafeyi yeniden ayarlamak icin son adimi tekrarlamak istiyor musunuz?"
+
+#MSG_EXTRUDER_CORRECTION c=10
+"E-correct:"
+"E-dogrula:"
+
+#MSG_EJECT_FILAMENT c=17 r=1
+"Eject filament"
+"Filamenti cikart"
+
+#MSG_EJECTING_FILAMENT c=20 r=1
+"Ejecting filament"
+"Filament cikariliyor"
+
+#MSG_SELFTEST_ENDSTOP_NOTHIT c=20 r=1
+"Endstop not hit"
+"Endstop tetiklenmedi"
+
+#MSG_SELFTEST_ENDSTOP
+"Endstop"
+"\x00"
+
+#MSG_SELFTEST_ENDSTOPS
+"Endstops"
+"Endstop"
+
+#MSG_STACK_ERROR c=20 r=4
+"Error - static memory has been overwritten"
+"Hata - statik bellegin uzerine yazildi"
+
+#MSG_FSENS_NOT_RESPONDING c=20 r=4
+"ERROR: Filament sensor is not responding, please check connection."
+"HATA: Filament sensoru yanit vermiyor. lutfen kontrol edin."
+
+#MSG_ERROR
+"ERROR:"
+"HATA:"
+
+#MSG_SELFTEST_EXTRUDER_FAN_SPEED c=18
+"Extruder fan:"
+"Ektsruder fan:"
+
+#MSG_INFO_EXTRUDER c=15 r=1
+"Extruder info"
+"Ekstruder bilgi"
+
+#MSG_MOVE_E
+"Extruder"
+"Ekstruder"
+
+#
+"Fail stats MMU"
+"MMU hata durumu"
+
+#MSG_FSENS_AUTOLOAD_ON c=17 r=1
+"F. autoload  [on]"
+"F. oto yuk.  [on]"
+
+#MSG_FSENS_AUTOLOAD_NA c=17 r=1
+"F. autoload [N/A]"
+"F. oto yuk. [N/A]"
+
+#MSG_FSENS_AUTOLOAD_OFF c=17 r=1
+"F. autoload [off]"
+"F. oto yuk. [off]"
+
+#
+"Fail stats"
+"Hata durumu"
+
+#MSG_FAN_SPEED c=14
+"Fan speed"
+"Fan hizi"
+
+#MSG_SELFTEST_FAN c=20
+"Fan test"
+"\x00"
+
+#MSG_FANS_CHECK_ON c=17 r=1
+"Fans check   [on]"
+"Fan test     [on]"
+
+#MSG_FANS_CHECK_OFF c=17 r=1
+"Fans check  [off]"
+"Fan test    [off]"
+
+#MSG_FSENSOR_ON
+"Fil. sensor  [on]"
+"\x00"
+
+#MSG_FSENSOR_NA
+"Fil. sensor [N/A]"
+"\x00"
+
+#MSG_FSENSOR_OFF
+"Fil. sensor [off]"
+"\x00"
+
+#
+"Filam. runouts"
+"Fil. bitme"
+
+#MSG_FILAMENT_CLEAN c=20 r=2
+"Filament extruding & with correct color?"
+"Fil. akiyor ve rengi dogru mu?"
+
+#MSG_NOT_LOADED c=19
+"Filament not loaded"
+"Filam. yuklu degil"
+
+#MSG_FILAMENT_SENSOR c=20
+"Filament sensor"
+"\x00"
+
+#MSG_FILAMENT_USED c=19 r=1
+"Filament used"
+"Kullanilan filament"
+
+#MSG_PRINT_TIME c=19 r=1
+"Print time"
+"Baski suresi"
+
+#MSG_FILE_INCOMPLETE c=20 r=2
+"File incomplete. Continue anyway?"
+"Dosya eksik. Devam edilsin mi?"
+
+#MSG_FINISHING_MOVEMENTS c=20 r=1
+"Finishing movements"
+"Komut bitiriliyor"
+
+#MSG_V2_CALIBRATION c=17 r=1
+"First layer cal."
+"Ilk katman kal."
+
+#MSG_WIZARD_SELFTEST c=20 r=8
+"First, I will run the selftest to check most common assembly problems."
+"Oncelikle genel montaj sorunlarini kontrol icin otomatik testi calistiracagim."
+
+#
+"Fix the issue and then press button on MMU unit."
+"Sorunu duzeltip MMU uzerindeki butona basin."
+
+#MSG_FLOW
+"Flow"
+"Akis"
+
+#MSG_PRUSA3D_FORUM
+"forum.prusa3d.com"
+"\x00"
+
+#MSG_SELFTEST_COOLING_FAN c=20
+"Front print fan?"
+"On baski fani?"
+
+#MSG_BED_CORRECTION_FRONT c=14 r=1
+"Front side[um]"
+"On yan    [um]"
+
+#MSG_SELFTEST_FANS
+"Front/left fans"
+"On/sol fanlar"
+
+#MSG_SELFTEST_HEATERTHERMISTOR
+"Heater/Thermistor"
+"Isitici/Termistor"
+
+#MSG_BED_HEATING_SAFETY_DISABLED
+"Heating disabled by safety timer."
+"Isitma devre disi birakildi."
+
+#MSG_HEATING_COMPLETE c=20
+"Heating done."
+"Isitma tamam."
+
+#MSG_HEATING
+"Heating"
+"Isitiliyor"
+
+#MSG_WIZARD_WELCOME c=20 r=7
+"Hi, I am your Original Prusa i3 printer. Would you like me to guide you through the setup process?"
+"Merhaba, ben Orijinal Prusa i3 yazicinizim. Kurulum surecinde size rehberlik etmemi ister misiniz?"
+
+#MSG_WIZARD_WELCOME c=20 r=7
+"Hi, I am your Zaribo printer. Would you like me to guide you through the setup process?"
+"Merhaba, ben Zaribo yazicinizim. Kurulum surecinde size rehberlik etmemi ister misiniz?"
+
+#MSG_PRUSA3D_HOWTO
+"howto.prusa3d.com"
+"\x00"
+
+#MSG_FILAMENTCHANGE
+"Change filament"
+"Filament degistir"
+
+#MSG_CHANGE_SUCCESS
+"Change success!"
+"Degisim tamamlandi!"
+
+#MSG_CORRECTLY c=20
+"Changed correctly?"
+"Dogru degisti mi?"
+
+#MSG_SELFTEST_CHECK_BED c=20
+"Checking bed     "
+"Tabla kontrol     "
+
+#MSG_SELFTEST_CHECK_ENDSTOPS c=20
+"Checking endstops"
+"Endstop kontrol"
+
+#MSG_SELFTEST_CHECK_HOTEND c=20
+"Checking hotend  "
+"Nozle kontrol  "
+
+#MSG_SELFTEST_CHECK_FSENSOR c=20
+"Checking sensors "
+"Sensor kontrol "
+
+#MSG_SELFTEST_CHECK_X c=20
+"Checking X axis  "
+"X eksen kontrol  "
+
+#MSG_SELFTEST_CHECK_Y c=20
+"Checking Y axis  "
+"Y eksen kontrol  "
+
+#MSG_SELFTEST_CHECK_Z c=20
+"Checking Z axis  "
+"Z eksen kontrol  "
+
+#MSG_CHOOSE_EXTRUDER c=20 r=1
+"Choose extruder:"
+"Ekstruder secin:"
+
+#MSG_CHOOSE_FILAMENT c=20 r=1
+"Choose filament:"
+"Filament secin:"
+
+#MSG_FILAMENT c=17 r=1
+"Filament"
+"\x00"
+
+#MSG_WIZARD_XYZ_CAL c=20 r=8
+"I will run xyz calibration now. It will take approx. 12 mins."
+"Simdi xyz kalibrasyonunu yapacagim. Yaklasik 12 dk. surecek."
+
+#MSG_WIZARD_Z_CAL c=20 r=8
+"I will run z calibration now."
+"Simdi z kalibrasyonu yapacagim."
+
+#MSG_WATCH
+"Info screen"
+"Bilgi ekrani"
+
+#MSG_INSERT_FILAMENT c=20
+"Insert filament"
+"Filament takin"
+
+#MSG_WIZARD_FILAMENT_LOADED c=20 r=2
+"Is filament loaded?"
+"Filament yuklendi mi?"
+
+#MSG_STEEL_SHEET_CHECK c=20 r=2
+"Is steel sheet on heatbed?"
+"Celik levha tabla uzerinde mi?"
+
+#
+"Last print failures"
+"Son baski basarisiz"
+
+#
+"If you have additional steel sheets, calibrate their presets in Settings - HW Setup - Steel sheets."
+"\x00"
+
+#
+"Last print"
+"Son baski"
+
+#MSG_SELFTEST_EXTRUDER_FAN c=20
+"Left hotend fan?"
+"Sol fan?"
+
+#
+"Left"
+"Sol"
+
+#MSG_BED_CORRECTION_LEFT c=14 r=1
+"Left side [um]"
+"Sol taraf [um]"
+
+#
+"Lin. correction"
+"Dogrusal duzeltme"
+
+#MSG_BABYSTEP_Z
+"Live adjust Z"
+"Anlik Z seviye"
+
+#MSG_LOAD_FILAMENT c=17
+"Load filament"
+"Filament yukle"
+
+#MSG_LOADING_COLOR
+"Loading color"
+"Renk yukleniyor"
+
+#MSG_LOADING_FILAMENT c=20
+"Loading filament"
+"Filament yukleniyor"
+
+#MSG_LOOSE_PULLEY c=20 r=1
+"Loose pulley"
+"Gevsek kasnak"
+
+#
+"Load to nozzle"
+"Nozzle a yukle"
+
+#MSG_M117_V2_CALIBRATION c=25 r=1
+"M117 First layer cal."
+"M117 ilk katman kal."
+
+#MSG_MAIN
+"Main"
+"Ana Menu"
+
+#MSG_MEASURE_BED_REFERENCE_HEIGHT_LINE1 c=60
+"Measuring reference height of calibration point"
+"Kalibrasyon noktasinin referans yuksekligi olculuyor"
+
+#MSG_MESH_BED_LEVELING
+"Mesh Bed Leveling"
+"Mesh Tabla Seviye"
+
+#MSG_MMU_OK_RESUMING_POSITION c=20 r=4
+"MMU OK. Resuming position..."
+"MMU OK. Pozisyona devam ediliyor..."
+
+#MSG_MMU_OK_RESUMING_TEMPERATURE c=20 r=4
+"MMU OK. Resuming temperature..."
+"MMU OK. Isitmaya devem ediliyor..."
+
+#
+"Measured skew"
+"Olculen egim"
+
+#
+"MMU fails"
+"MMU basarisiz"
+
+#
+"MMU load failed     "
+"MMU yukleme basarisiz     "
+
+#
+"MMU load fails"
+"MMU yukleme basarisiz"
+
+#MSG_MMU_OK_RESUMING c=20 r=4
+"MMU OK. Resuming..."
+"MMU OK. Devam ediliyor..."
+
+#MSG_STEALTH_MODE_OFF
+"Mode     [Normal]"
+"Mod      [Normal]"
+
+#MSG_SILENT_MODE_ON
+"Mode     [silent]"
+"Mod      [Sessiz]"
+
+#
+"MMU needs user attention."
+"MMU kullanici mudahalesi gerektiriyor."
+
+#
+"MMU power fails"
+"MMU guc problemi"
+
+#MSG_STEALTH_MODE_ON
+"Mode    [Stealth]"
+"Mod       [Gizli]"
+
+#MSG_AUTO_MODE_ON
+"Mode [auto power]"
+"Mod     [oto guc]"
+
+#MSG_SILENT_MODE_OFF
+"Mode [high power]"
+"Mod    [yuk. guc]"
+
+#
+"MMU2 connected"
+"MMU baglandi"
+
+#MSG_SELFTEST_MOTOR
+"Motor"
+"\x00"
+
+#MSG_MOVE_AXIS
+"Move axis"
+"Eksen Hareket"
+
+#MSG_MOVE_X
+"Move X"
+"X Hareket"
+
+#MSG_MOVE_Y
+"Move Y"
+"Y Hareket"
+
+#MSG_MOVE_Z
+"Move Z"
+"Z Hareket"
+
+#MSG_NO_MOVE
+"No move."
+"Hareket yok."
+
+#MSG_NO_CARD
+"No SD card"
+"SD Kart yok"
+
+#
+"N/A"
+"\x00"
+
+#MSG_NO
+"No"
+"Hayir"
+
+#MSG_SELFTEST_NOTCONNECTED
+"Not connected"
+"Bagli degil"
+
+#
+"New firmware version available:"
+"Yeni surum yazilim mevcut:"
+
+#MSG_SELFTEST_FAN_NO c=19
+"Not spinning"
+"Donmuyor"
+
+#MSG_WIZARD_V2_CAL c=20 r=8
+"Now I will calibrate distance between tip of the nozzle and heatbed surface."
+"Simdi nozle ucu ile tabla arasindaki mesafeyi ayarlayacagim."
+
+#MSG_WIZARD_WILL_PREHEAT c=20 r=4
+"Now I will preheat nozzle for PLA."
+"Simdi nozzle u PLA icin isitacagim."
+
+#MSG_NOZZLE
+"Nozzle"
+"\x00"
+
+#MSG_DEFAULT_SETTINGS_LOADED c=20 r=4
+"Old settings found. Default PID, Esteps etc. will be set."
+"Eski ayarlar bulundu. Varsayilan PID, Estep vb. ayarlanacaktir."
+
+#
+"Now remove the test print from steel sheet."
+"Simdi test baskisini celik sacdan cikarin."
+
+#
+"Nozzle FAN"
+"\x00"
+
+#MSG_PAUSE_PRINT
+"Pause print"
+"Duraklat"
+
+#MSG_PID_RUNNING c=20 r=1
+"PID cal.           "
+"PID kal.           "
+
+#MSG_PID_FINISHED c=20 r=1
+"PID cal. finished"
+"PID kal. tamamlandi"
+
+#MSG_PID_EXTRUDER c=17 r=1
+"PID calibration"
+"PID kalibrasyon"
+
+#MSG_PINDA_PREHEAT c=20 r=1
+"PINDA Heating"
+"PINDA isitiliyor"
+
+#MSG_PAPER c=20 r=8
+"Place a sheet of paper under the nozzle during the calibration of first 4 points. If the nozzle catches the paper, power off the printer immediately."
+"Ilk 4 noktanin kalibrasyonu sirasinda nozzle altina bir sayfa kagit yerlestirin. Nozzle kagidi cekerse, yaziciyi hemen kapatin."
+
+#MSG_WIZARD_CLEAN_HEATBED c=20 r=8
+"Please clean heatbed and then press the knob."
+"Lutfen tablayi temizleyip butona basiniz."
+
+#MSG_CONFIRM_NOZZLE_CLEAN c=20 r=8
+"Please clean the nozzle for calibration. Click when done."
+"Lutfen kalibrasyon icin nozzle u temizleyin ve butona basin."
+
+#MSG_SELFTEST_PLEASECHECK
+"Please check :"
+"Lutfen kontrol edin:"
+
+#MSG_WIZARD_CALIBRATION_FAILED c=20 r=8
+"Please check our handbook and fix the problem. Then resume the Wizard by rebooting the printer."
+"Lutfen el kitabimizi kontrol edin ve sorunu duzeltin. Ardindan, yaziciyi yeniden baslatarak Sihirbazi devam ettirin."
+
+#MSG_CHECK_IDLER c=20 r=4
+"Please open idler and remove filament manually."
+"Lutfen filamenti elle cikariniz."
+
+#MSG_PLACE_STEEL_SHEET c=20 r=4
+"Please place steel sheet on heatbed."
+"Lutfen celik saci tablaya yerlestirin."
+
+#MSG_PRESS_TO_UNLOAD c=20 r=4
+"Please press the knob to unload filament"
+"Filameti bosaltmak icin butona basiniz"
+
+#MSG_PULL_OUT_FILAMENT c=20 r=4
+"Please pull out filament immediately"
+"Lutfen filamenti derhal cekip cikarin"
+
+#MSG_EJECT_REMOVE c=20 r=4
+"Please remove filament and then press the knob."
+"Lutfen filamenti cikarip butona basiniz."
+
+#MSG_REMOVE_STEEL_SHEET c=20 r=4
+"Please remove steel sheet from heatbed."
+"Lutfen celik saci tabladan aliniz."
+
+#MSG_RUN_XYZ c=20 r=4
+"Please run XYZ calibration first."
+"Lutfen once XYZ kalibrasyonu calistirin."
+
+#MSG_UPDATE_MMU2_FW c=20 r=4
+"Please update firmware in your MMU2. Waiting for reset."
+"Lutfen MMU2 yazilimini guncelleyin. Sifirlama icin bekleniyor."
+
+#MSG_PLEASE_WAIT c=20
+"Please wait"
+"Lutfen bekleyin"
+
+#
+"Please remove shipping helpers first."
+"Lutfen once tasima koruyuculari cikarin."
+
+#MSG_PREHEAT_NOZZLE c=20
+"Preheat the nozzle!"
+"Nozzle on isitma!"
+
+#MSG_PREHEAT
+"Preheat"
+"On isitma"
+
+#MSG_WIZARD_HEATING c=20 r=3
+"Preheating nozzle. Please wait."
+"Nozzle isitiliyor. Lutfen bekleyin."
+
+#
+"Please upgrade."
+"Lutfen guncelleyin."
+
+#MSG_PRESS_TO_PREHEAT c=20 r=4
+"Press knob to preheat nozzle and continue."
+"Nozzle isitma icin butona basin ve devam edin."
+
+#
+"Power failures"
+"Guc kesintileri"
+
+#MSG_PRINT_ABORTED c=20
+"Print aborted"
+"Baski iptal edildi"
+
+#
+"Preheating to load"
+"Yukleme icin isitiliyor"
+
+#
+"Preheating to unload"
+"Cikarma icin isitiliyor"
+
+#MSG_SELFTEST_PRINT_FAN_SPEED c=18
+"Print fan:"
+"Baski fani:"
+
+#MSG_CARD_MENU
+"Print from SD"
+"SD karttan yazdir"
+
+#
+"Press the knob"
+"Butona basiniz"
+
+#MSG_PRINT_PAUSED c=20 r=1
+"Print paused"
+"Baski duraklatildi"
+
+#
+"Press the knob to resume nozzle temperature."
+"Nozzle isitmayi devam ettirmek icin butona basin."
+
+#MSG_FOLLOW_CALIBRATION_FLOW c=20 r=8
+"Printer has not been calibrated yet. Please follow the manual, chapter First steps, section Calibration flow."
+"Yazici henuz kalibre edilmedi. Lutfen kilavuzda ilk adimlar bolumu kalibrasyon kismina bakiniz."
+
+#
+"Print FAN"
+"Baski FAN"
+
+#WELCOME_MSG c=20
+"Prusa i3 MK2.5"
+"\x00"
+
+#WELCOME_MSG c=20
+"Prusa i3 MK3"
+"Prusa i3 MK2.5"
+
+#WELCOME_MSG c=20
+"Zaribo MK2.5-320"
+"Prusa i3 MK2.5"
+
+#WELCOME_MSG c=20
+"Zaribo MK2.5-220"
+"Prusa i3 MK2.5"
+
+#WELCOME_MSG c=20
+"Zaribo MK3-320"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3-220"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK2.5-420"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3-420"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3S-220"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3S-320"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3S-420"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3-BMG-220"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3-BMG-320"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3-BMG-420"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3S-BMG-220"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3S-BMG-320"
+"\x00"
+
+#WELCOME_MSG c=20
+"Zaribo MK3S-BMG-420"
+"\x00"
+#
+"Please insert filament into the extruder, then press the knob to load it."
+"\x00"
+
+#
+"Please insert filament into the first tube of the MMU, then press the knob to load it."
+"\x00"
+
+#
+"Please load filament first."
+"\x00"
+
+#MSG_PRUSA3D
+"prusa3d.com"
+"\x00"
+
+#MSG_BED_CORRECTION_REAR c=14 r=1
+"Rear side [um]"
+"Arka yan  [um]"
+
+#MSG_RECOVERING_PRINT c=20 r=1
+"Recovering print    "
+"Baski kurtariliyor    "
+
+#MSG_REMOVE_OLD_FILAMENT c=20 r=4
+"Remove old filament and press the knob to start loading new filament."
+"Eski filamenti cikarin ve yeni filamenti yuklemek icin butona basin."
+
+#
+"Prusa i3 MK3S"
+"\x00"
+
+#MSG_CALIBRATE_BED_RESET
+"Reset XYZ calibr."
+"XYZ kal. sifirla."
+
+#MSG_BED_CORRECTION_RESET
+"Reset"
+"\x00"
+
+#MSG_RESUME_PRINT
+"Resume print"
+"Devam ettir"
+
+#MSG_RESUMING_PRINT c=20 r=1
+"Resuming print"
+"Baski surduruluyor"
+
+#MSG_BED_CORRECTION_RIGHT c=14 r=1
+"Right side[um]"
+"Sag yan   [um]"
+
+#MSG_SECOND_SERIAL_ON c=17 r=1
+"RPi port     [on]"
+"\x00"
+
+#MSG_SECOND_SERIAL_OFF c=17 r=1
+"RPi port    [off]"
+"\x00"
+
+#MSG_WIZARD_RERUN c=20 r=7
+"Running Wizard will delete current calibration results and start from the beginning. Continue?"
+"Sihirbazi calistirmak mevcut kalibrasyonu siler ve en bastan baslar. Devam edilsin mi?"
+
+#MSG_TOSHIBA_FLASH_AIR_COMPATIBILITY_OFF c=19 r=1
+"SD card  [normal]"
+"SD kart  [normal]"
+
+#MSG_TOSHIBA_FLASH_AIR_COMPATIBILITY_ON c=19 r=1
+"SD card [flshAir]"
+"SD kart [flshAir]"
+
+#
+"Right"
+"Sag"
+
+#MSG_FIND_BED_OFFSET_AND_SKEW_LINE1 c=60
+"Searching bed calibration point"
+"Tabla kalibre noktasi araniyor"
+
+#MSG_LANGUAGE_SELECT
+"Select language"
+"Dil seciniz"
+
+#MSG_SELFTEST_OK
+"Self test OK"
+"Donanim Test OK"
+
+#MSG_SELFTEST_START c=20
+"Self test start  "
+"Donanim Test basladi "
+
+#MSG_SELFTEST
+"Selftest         "
+"Donanim Test         "
+
+#MSG_SELFTEST_ERROR
+"Selftest error !"
+"Donanim Test hatasi!"
+
+#MSG_SELFTEST_FAILED c=20
+"Selftest failed  "
+"Donanim Test basarisiz "
+
+#MSG_FORCE_SELFTEST c=20 r=8
+"Selftest will be run to calibrate accurate sensorless rehoming."
+"Sensorsuz hassas eksen sifirlama kalibresi calistirilacak."
+
+#
+"Select nozzle preheat temperature which matches your material."
+"Kullandiginiz filamente uygun nozzle isitma derecesini seciniz."
+
+#MSG_SET_TEMPERATURE c=19 r=1
+"Set temperature:"
+"Isiyi ayarlayin:"
+
+#MSG_SETTINGS
+"Settings"
+"Ayarlar"
+
+#MSG_SHOW_END_STOPS c=17 r=1
+"Show end stops"
+"Endstop durumu"
+
+#
+"Sensor state"
+"Sensor durumu"
+
+#MSG_FILE_CNT c=20 r=4
+"Some files will not be sorted. Max. No. of files in 1 folder for sorting is 100."
+"Bazi dosyalar siralanamadi. Bir klasor icin en fazla siralanacak dosya sayisi 100."
+
+#MSG_SORT_NONE c=17 r=1
+"Sort       [none]"
+"Siralama    [yok]"
+
+#MSG_SORT_TIME c=17 r=1
+"Sort       [time]"
+"Siralama  [tarih]"
+
+#
+"Severe skew:"
+"Siddetli carpik:"
+
+#MSG_SORT_ALPHA c=17 r=1
+"Sort   [alphabet]"
+"Sort  [alfabetik]"
+
+#MSG_SORTING c=20 r=1
+"Sorting files"
+"Dosyalar siralaniyor"
+
+#MSG_SOUND_LOUD c=17 r=1
+"Sound      [loud]"
+"Ses      [yuksek]"
+
+#
+"Slight skew:"
+"Hafif carpik:"
+
+#MSG_SOUND_MUTE c=17 r=1
+"Sound      [mute]"
+"Ses      [sessiz]"
+
+#
+"Some problem encountered, Z-leveling enforced ..."
+"Bazi problemlerle karsilasildi. Z seviyeleme zorlandi ..."
+
+#MSG_SOUND_ONCE c=17 r=1
+"Sound      [once]"
+"Ses    [bir defa]"
+
+#MSG_SOUND_SILENT c=17 r=1
+"Sound    [silent]"
+"Ses      [sessiz]"
+
+#MSG_SPEED
+"Speed"
+"Hiz"
+
+#MSG_SELFTEST_FAN_YES c=19
+"Spinning"
+"Donuyor"
+
+#MSG_TEMP_CAL_WARNING c=20 r=4
+"Stable ambient temperature 21-26C is needed a rigid stand is required."
+"Kararli bir durus icin 21-26C ortam sicakligina ihtiyac vardir."
+
+#MSG_STATISTICS
+"Statistics  "
+"Istatistikler "
+
+#MSG_STOP_PRINT
+"Stop print"
+"Durdur"
+
+#MSG_STOPPED
+"STOPPED. "
+"DURDURULDU. "
+
+#MSG_SUPPORT
+"Support"
+"Destek"
+
+#MSG_SELFTEST_SWAPPED
+"Swapped"
+"Yer degisti"
+
+#
+"Select filament:"
+"\x00"
+
+#MSG_TEMP_CALIBRATION c=20 r=1
+"Temp. cal.          "
+"Isi kal.          "
+
+#MSG_TEMP_CALIBRATION_ON c=20 r=1
+"Temp. cal.   [on]"
+"Isi cal.   [acik]"
+
+#
+"Select temperature which matches your material."
+"\x00"
+
+#MSG_TEMP_CALIBRATION_OFF c=20 r=1
+"Temp. cal.  [off]"
+"Isi cal. [kapali]"
+
+#MSG_CALIBRATION_PINDA_MENU c=17 r=1
+"Temp. calibration"
+"Isi kalibrasyon"
+
+#MSG_TEMP_CAL_FAILED c=20 r=8
+"Temperature calibration failed"
+"Isi kalibrasyonu basarisiz"
+
+#MSG_TEMP_CALIBRATION_DONE c=20 r=12
+"Temperature calibration is finished and active. Temp. calibration can be disabled in menu Settings->Temp. cal."
+"Isi kalibrasyonu tamamlandi ve aktif edildi. Isi kalibrasyonu Ayarlar->Isi kal. menusunden iptal edilebilir."
+
+#MSG_TEMPERATURE
+"Temperature"
+"Isi"
+
+#MSG_MENU_TEMPERATURES c=15 r=1
+"Temperatures"
+"Isi"
+
+#MSG_FOLLOW_Z_CALIBRATION_FLOW c=20 r=4
+"There is still a need to make Z calibration. Please follow the manual, chapter First steps, section Calibration flow."
+"Hala Z kalibre ihtiyaci bulunmaktadir. Lutfen kilavuzda ilk adimlar bolumu kalibrasyon kismina bakiniz."
+
+#
+"Total filament"
+"Toplam filament"
+
+#
+"Total print time"
+"Toplam sure"
+
+#MSG_TUNE
+"Tune"
+"Ayar"
+
+#
+"Unload"
+"Bosaltma"
+
+#
+"Total failures"
+"Toplam basarisizlik"
+
+#
+"to load filament"
+"fil. yuklemek icin"
+
+#
+"to unload filament"
+"fil. bosaltmak icin"
+
+#MSG_UNLOAD_FILAMENT c=17
+"Unload filament"
+"Filament bosalt"
+
+#MSG_UNLOADING_FILAMENT c=20 r=1
+"Unloading filament"
+"Fil. bosaltiliyor"
+
+#
+"Total"
+"Toplam"
+
+#MSG_USED c=19 r=1
+"Used during print"
+"Kullanildi"
+
+#MSG_MENU_VOLTAGES c=15 r=1
+"Voltages"
+"Voltajlar"
+
+#
+"unknown"
+"bilinmiyor"
+
+#MSG_USERWAIT
+"Wait for user..."
+"Kullanici bekleniyor..."
+
+#MSG_WAITING_TEMP c=20 r=3
+"Waiting for nozzle and bed cooling"
+"Tabla ve nozzle sogumasi bekleniyor"
+
+#MSG_WAITING_TEMP_PINDA c=20 r=3
+"Waiting for PINDA probe cooling"
+"PINDA sogumasi bekleniyor"
+
+#
+"Use unload to remove filament 1 if it protrudes outside of the rear MMU tube. Use eject if it is hidden in tube."
+"Eger filament 1 MMU arka tupun disina tasarsa bosaltma, tupun icinede kalmissa cikarma secenegini kullanin."
+
+#MSG_CHANGED_BOTH c=20 r=4
+"Warning: both printer type and motherboard type changed."
+"Uyari: yazici tipi ve ana kart tipi degisti."
+
+#MSG_CHANGED_MOTHERBOARD c=20 r=4
+"Warning: motherboard type changed."
+"Uyari: ana kart tipi degisti."
+
+#MSG_CHANGED_PRINTER c=20 r=4
+"Warning: printer type changed."
+"Uyari: yazici tipi degisti."
+
+#MSG_UNLOAD_SUCCESSFUL c=20 r=2
+"Was filament unload successful?"
+"Filament duzgun sekilde bosaltildi mi?"
+
+#MSG_SELFTEST_WIRINGERROR
+"Wiring error"
+"Kablolama hatasi"
+
+#MSG_WIZARD c=17 r=1
+"Wizard"
+"Sihirbaz"
+
+#MSG_XYZ_DETAILS c=19 r=1
+"XYZ cal. details"
+"XYZ kal. detaylari"
+
+#MSG_BED_SKEW_OFFSET_DETECTION_FITTING_FAILED c=20 r=8
+"XYZ calibration failed. Please consult the manual."
+"XYZ kalibre basarisiz. Lutfen kullanma kilavuzuna basvurunuz."
+
+#MSG_YES
+"Yes"
+"Evet"
+
+#MSG_WIZARD_QUIT c=20 r=8
+"You can always resume the Wizard from Calibration -> Wizard."
+"Sihirbazi her zaman Kalibrasyon -> Sihirbaz menusunden devam ettirebilirsiniz."
+
+#MSG_BED_SKEW_OFFSET_DETECTION_SKEW_EXTREME c=20 r=8
+"XYZ calibration all right. Skew will be corrected automatically."
+"XYZ kalibrasyon tamamlandi. Carpiklik otomatik olarak duzeltilecek."
+
+#MSG_BED_SKEW_OFFSET_DETECTION_SKEW_MILD c=20 r=8
+"XYZ calibration all right. X/Y axes are slightly skewed. Good job!"
+"XYZ kalibrasyon tamamlandi. X/Y eksenlerde hafif carpiklik var. Fena degil!"
+
+#
+"X-correct:"
+"X-dogru:"
+
+#MSG_BED_SKEW_OFFSET_DETECTION_PERFECT c=20 r=8
+"XYZ calibration ok. X/Y axes are perpendicular. Congratulations!"
+"XYZ kalibrasyon tamamlandi. X/Y eksenler paralel. Tebrikler!"
+
+#MSG_BED_SKEW_OFFSET_DETECTION_WARNING_FRONT_BOTH_FAR c=20 r=8
+"XYZ calibration compromised. Front calibration points not reachable."
+"XYZ kalibrasyonda sorun olabilir. On kalibrasyon noktalarina ulasilamiyor."
+
+#MSG_BED_SKEW_OFFSET_DETECTION_WARNING_FRONT_RIGHT_FAR c=20 r=8
+"XYZ calibration compromised. Right front calibration point not reachable."
+"XYZ kalibrasyonda sorun olabilir. Sag on kalibrasyon noktasina ulasilamiyor."
+
+#MSG_LOAD_ALL c=17
+"Load all"
+"Hepsini yukle"
+
+#
+"XYZ calibration failed. Bed calibration point was not found."
+"XYZ kalibrasyon basarisiz. Tabla kalibrasyon noktasi bulunamadi."
+
+#
+"XYZ calibration failed. Front calibration points not reachable."
+"XYZ kalibrasyon basarisiz. On kalibrasyon noktasina ulasilamiyor."
+
+#
+"XYZ calibration failed. Right front calibration point not reachable."
+"XYZ kalibrasyon basarisiz. Sag on kalibrasyon noktasina ulasilamiyor."
+
+#
+"Y distance from min"
+"Y noktasinin sifirdan uzakligi"
+
+#
+"The printer will start printing a zig-zag line. Rotate the knob until you reach the optimal height. Check the pictures in the handbook (Calibration chapter)."
+"\x00"
+
+#
+"Y-correct:"
+"Y-dogru:"
+
+#MSG_OFF
+" [off]"
+" [kapali]"
+
+#
+"Back"
+"Geri"
+
+#
+"Checks"
+"Kontroller"
+
+#
+"False triggering"
+"Hatali tetikleme"
+
+#
+"FINDA:"
+"\x00"
+
+#
+"Firmware   [none]"
+"Yazilim     [yok]"
+
+#
+"Firmware [strict]"
+"Yazilim    [kati]"
+
+#
+"Firmware   [warn]"
+"Firmware  [uyari]"
+
+#
+"HW Setup"
+"Donanim"
+
+#
+"IR:"
+"\x00"
+
+#
+"Magnets comp.[N/A]"
+"Miknatis telafi [N/A]"
+
+#
+"Magnets comp.[Off]"
+"Miknatis telafi [off]"
+
+#
+"Magnets comp. [On]"
+"Miknatis telafi [on]"
+
+#
+"Mesh         [3x3]"
+"\x00"
+
+#
+"Mesh         [7x7]"
+"\x00"
+
+#
+"Mesh bed leveling"
+"Mesh tabla seviye"
+
+#
+"MK3S firmware detected on MK3 printer"
+"MK3 yazicida MK3S yazilimi tespit edildi"
+
+#
+"MMU Mode [Normal]"
+"MMU Mod [Normal]"
+
+#
+"MMU Mode[Stealth]"
+"MMU Mod[Gizli]"
+
+#
+"Mode change in progress ..."
+"Mod degisimi yapiliyor ..."
+
+#
+"Model      [none]"
+"Model       [yok]"
+
+#
+"Model    [strict]"
+"Model      [kati]"
+
+#
+"Model      [warn]"
+"Model     [uyari]"
+
+#
+"Nozzle d.  [0.25]"
+"Nozzle c.  [0.25]"
+
+#
+"Nozzle d.  [0.40]"
+"Nozzle c.  [0.40]"
+
+#
+"Nozzle d.  [0.60]"
+"Nozzle c.  [0.60]"
+
+#
+"Nozzle     [none]"
+"Nozzle      [yok]"
+
+#
+"Nozzle   [strict]"
+"Nozzle     [kati]"
+
+#
+"Nozzle     [warn]"
+"Nozzle    [uyari]"
+
+#
+"G-code sliced for a different level. Continue?"
+"Dilimleme farkli bir seviye icin yapilmis. Devam?"
+
+#
+"G-code sliced for a different level. Please re-slice the model again. Print cancelled."
+"Dilimleme farkli bir seviye icin yapilmis. Lutfen yeniden dilimleyin. Baski iptal edildi."
+
+#
+"G-code sliced for a different printer type. Continue?"
+"Dilimleme farkli bir yazici icin yapilmis. Devam?"
+
+#
+"G-code sliced for a different printer type. Please re-slice the model again. Print cancelled."
+"Dilimleme farkli bir yazici icin yapilmis. Lutfen yeniden dilimleyin. Baski iptal edildi."
+
+#
+"G-code sliced for a newer firmware. Continue?"
+"Dilimleme yeni bir yazilim icin yapilmis. Devam?"
+
+#
+"G-code sliced for a newer firmware. Please update the firmware. Print cancelled."
+"Dilimleme yeni bir yazilim icin yapilmis. Lutfen yeniden dilimleyin. Baski iptal edildi."
+
+#
+"PINDA:"
+"\x00"
+
+#
+"Preheating to cut"
+"Kesmek icin isitiliyor"
+
+#
+"Preheating to eject"
+"Cikarmak icin isitiliyor"
+
+#
+"Printer nozzle diameter differs from the G-code. Continue?"
+"Yazici nozzle capi G-code ile ayni degil. Devam?"
+
+#
+"Printer nozzle diameter differs from the G-code. Please check the value in settings. Print cancelled."
+"Yazici nozzle capi G-code ile ayni degil. Lutfen degerleri kontrol ediniz. Baski iptal edildi."
+
+#
+"Rename"
+"Yeni isim"
+
+#
+"Select"
+"Sec"
+
+#
+"Sensor info"
+"Sensor bilgisi"
+
+#
+"Sheet"
+"Levha"
+
+#
+"Sound    [assist]"
+"Ses      [yardim]"
+
+#
+"Steel sheets"
+"Celik levha"
+
+#
+"Z-correct:"
+"Z-dogrulama:"
+
+#
+"Z-probe nr.    [1]"
+"Z-olcum        [1]"
+
+#
+"Z-probe nr.    [3]"
+"Z-olcum        [3]"
+
+#
+"Z-probe nr.    [5]"
+"Z-olcum        [5]"
+
