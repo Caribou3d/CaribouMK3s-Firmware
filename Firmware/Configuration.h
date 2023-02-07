@@ -17,10 +17,10 @@ extern PGM_P sPrinterName;
 
 // Firmware version
 #define FW_MAJOR 3
-#define FW_MINOR 11
-#define FW_REVISION 0
-//#define FW_FLAVOR RC      //uncomment if DEBUG, DEVEL, APLHA, BETA or RC
-#define FW_FLAVERSION 1     //uncomment if FW_FLAVOR is defined and versioning is needed.
+#define FW_MINOR 12
+#define FW_REVISION 1
+//#define FW_FLAVOR RC      //uncomment if DEBUG, DEVEL, ALPHA, BETA or RC
+//#define FW_FLAVERSION 1     //uncomment if FW_FLAVOR is defined and versioning is needed. Limited to max 8.
 #ifndef FW_FLAVOR
     #define FW_VERSION STR(FW_MAJOR) "." STR(FW_MINOR) "." STR(FW_REVISION)
 #else
@@ -28,12 +28,12 @@ extern PGM_P sPrinterName;
 #endif
 
 #define FW_COMMIT_NR 5786
-#define FW_COMMIT_HASH "6c7ae04f"
+#define FW_COMMIT_HASH "1108f123"
 
 // FW_VERSION_UNKNOWN means this is an unofficial build.
 // The firmware should only be checked into github with this symbol.
 #define FW_DEV_VERSION FW_VERSION_UNKNOWN
-#define FW_REPOSITORY "Caribou3d"
+#define FW_REPOSITORY "Unknown"
 #define FW_VERSION_FULL FW_VERSION "-" STR(FW_COMMIT_NR)
 
 // G-code language level
@@ -445,10 +445,12 @@ your extruder heater takes 2 minutes to hit the target on heating.
 // Custom M code points
 #define CUSTOM_M_CODES
 #ifdef CUSTOM_M_CODES
+#ifdef ENABLE_AUTO_BED_LEVELING
   #define CUSTOM_M_CODE_SET_Z_PROBE_OFFSET 851
   #define Z_PROBE_OFFSET_RANGE_MIN -15
   #define Z_PROBE_OFFSET_RANGE_MAX -5
-#endif
+#endif // ENABLE_AUTO_BED_LEVELING
+#endif // CUSTOM_M_CODES
 
 
 // EEPROM
@@ -489,11 +491,6 @@ your extruder heater takes 2 minutes to hit the target on heating.
 
 // Increase the FAN pwm frequency. Removes the PWM noise but increases heating in the FET/Arduino
 //#define FAST_PWM_FAN
-
-// Temperature status LEDs that display the hotend and bet temperature.
-// If all hotends and bed temperature and temperature setpoint are < 54C then the BLUE led is on.
-// Otherwise the RED led is on. There is 1C hysteresis.
-//#define TEMP_STAT_LEDS
 
 // Use software PWM to drive the fan, as for the heaters. This uses a very low frequency
 // which is not ass annoying as with the hardware PWM. On the other hand, if this frequency
@@ -536,31 +533,6 @@ your extruder heater takes 2 minutes to hit the target on heating.
 
 #define DEFAULT_NOMINAL_FILAMENT_DIA  1.75  //Enter the diameter (in mm) of the filament generally used (3.0 mm or 1.75 mm). Used by the volumetric extrusion.
 
-// Calibration status of the machine, to be stored into the EEPROM,
-// (unsigned char*)EEPROM_CALIBRATION_STATUS
-enum CalibrationStatus
-{
-	// Freshly assembled, needs to peform a self-test and the XYZ calibration.
-	CALIBRATION_STATUS_ASSEMBLED = 255,
-
-	// For the wizard: self test has been performed, now the XYZ calibration is needed.
-	CALIBRATION_STATUS_XYZ_CALIBRATION = 250,
-
-	// For the wizard: factory assembled, needs to run Z calibration.
-	CALIBRATION_STATUS_Z_CALIBRATION = 240,
-
-	// The XYZ calibration has been performed, now it remains to run the V2Calibration.gcode.
-	CALIBRATION_STATUS_LIVE_ADJUST = 230,
-
-    // Calibrated, ready to print.
-    CALIBRATION_STATUS_CALIBRATED = 1,
-
-    // Legacy: resetted by issuing a G86 G-code.
-    // This value can only be expected after an upgrade from the initial MK2 firmware releases.
-    // Currently the G86 sets the calibration status to 
-    CALIBRATION_STATUS_UNKNOWN = 0,
-};
-
 // Try to maintain a minimum distance from the bed even when Z is
 // unknown when doing the following operations
 #define MIN_Z_FOR_LOAD    50 // lcd filament loading or autoload
@@ -570,6 +542,5 @@ enum CalibrationStatus
 
 #include "Configuration_adv.h"
 #include "thermistortables.h"
-
 
 #endif //__CONFIGURATION_H
