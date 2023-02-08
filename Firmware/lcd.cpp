@@ -114,7 +114,7 @@ void lcd_escape_write(uint8_t chr);
 #endif
 
 static void lcd_pulseEnable(void)
-{  
+{
 	WRITE(LCD_PINS_ENABLE,HIGH);
 	_delay_us(1);    // enable pulse must be >450ns
 	WRITE(LCD_PINS_ENABLE,LOW);
@@ -132,7 +132,7 @@ static void lcd_writebits(uint8_t value)
 	WRITE(LCD_PINS_D5, value & 0x20);
 	WRITE(LCD_PINS_D6, value & 0x40);
 	WRITE(LCD_PINS_D7, value & 0x80);
-	
+
 	lcd_pulseEnable();
 }
 
@@ -191,7 +191,7 @@ static void lcd_begin(uint8_t clear)
 	// finally, set # lines, font size, etc.0
 	lcd_command(LCD_FUNCTIONSET | lcd_displayfunction);
 	// turn the display on with no cursor or blinking default
-	lcd_displaycontrol = LCD_CURSOROFF | LCD_BLINKOFF;  
+	lcd_displaycontrol = LCD_CURSOROFF | LCD_BLINKOFF;
 	lcd_display();
 	// clear it off
 	if (clear) lcd_clear();
@@ -199,7 +199,7 @@ static void lcd_begin(uint8_t clear)
 	lcd_displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
 	// set the entry mode
 	lcd_command(LCD_ENTRYMODESET | lcd_displaymode);
-    
+
 #else
     lcd_displaycontrol = LCD_CURSOROFF | LCD_BLINKOFF;
     lcd_displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
@@ -216,7 +216,7 @@ static void lcd_begin(uint8_t clear)
 	lcd_displaycontrol &= ~LCD_DISPLAYON;
 	lcd_command(LCD_DISPLAYCONTROL | lcd_displaycontrol);
     lcd_command(LCD_FUNCTIONSET | lcd_displayfunction); // Set # lines, font size, etc.
-    lcd_clear();
+    if ((clear) || (!clear)) lcd_clear();
     lcd_command(LCD_ENTRYMODESET | lcd_displaymode); // Set Entry Mode
     lcd_home();
     lcd_display();
@@ -249,7 +249,7 @@ void lcd_init(void)
 	SET_OUTPUT(LCD_PINS_D5);
 	SET_OUTPUT(LCD_PINS_D6);
 	SET_OUTPUT(LCD_PINS_D7);
-	
+
 #ifdef LCD_8BIT
 	lcd_displayfunction |= LCD_8BITMODE;
 #endif
@@ -257,7 +257,7 @@ void lcd_init(void)
 #ifdef WEH002004_OLED
     lcd_displayfunction |= OLED_FONT_TABLE;
 #endif
-	_delay_us(50000); 
+	_delay_us(50000);
 	lcd_begin(1); //first time init
 	fdev_setup_stream(lcdout, lcd_putchar, NULL, _FDEV_SETUP_WRITE); //setup lcdout stream
 }
@@ -383,7 +383,7 @@ void lcd_set_cursor(uint8_t col, uint8_t row)
 	uint8_t row_offsets[] = { 0x00, 0x40, 0x14, 0x54 };
 	if (row >= LCD_HEIGHT)
 		row = LCD_HEIGHT - 1;    // we count rows starting w/0
-	lcd_currline = row;  
+	lcd_currline = row;
 	lcd_command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
 }
 
@@ -639,13 +639,13 @@ void lcd_print(double n, int digits)
 
 void lcd_printNumber(unsigned long n, uint8_t base)
 {
-	unsigned char buf[8 * sizeof(long)]; // Assumes 8-bit chars. 
+	unsigned char buf[8 * sizeof(long)]; // Assumes 8-bit chars.
 	unsigned long i = 0;
 	if (n == 0)
 	{
 		lcd_print('0');
 		return;
-	} 
+	}
 	while (n > 0)
 	{
 		buf[i++] = n % base;
@@ -655,8 +655,8 @@ void lcd_printNumber(unsigned long n, uint8_t base)
 		lcd_print((char) (buf[i - 1] < 10 ?	'0' + buf[i - 1] : 'A' + buf[i - 1] - 10));
 }
 
-void lcd_printFloat(double number, uint8_t digits) 
-{ 
+void lcd_printFloat(double number, uint8_t digits)
+{
 	// Handle negative numbers
 	if (number < 0.0)
 	{
@@ -674,15 +674,15 @@ void lcd_printFloat(double number, uint8_t digits)
 	lcd_print(int_part);
 	// Print the decimal point, but only if there are digits beyond
 	if (digits > 0)
-		lcd_print('.'); 
+		lcd_print('.');
 	// Extract digits from the remainder one at a time
 	while (digits-- > 0)
 	{
 		remainder *= 10.0;
 		int toPrint = int(remainder);
 		lcd_print(toPrint);
-		remainder -= toPrint; 
-	} 
+		remainder -= toPrint;
+	}
 }
 
 
@@ -1013,4 +1013,3 @@ void lcd_set_custom_characters_nextpage(void)
 	lcd_createChar_P(LCD_STR_ARROW_2_DOWN[0], lcd_chardata_arr2down);
 	lcd_createChar_P(LCD_STR_CONFIRM[0], lcd_chardata_confirm);
 }
-

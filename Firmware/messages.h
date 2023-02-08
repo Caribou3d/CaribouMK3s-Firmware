@@ -7,7 +7,7 @@
 extern "C" {
 #endif //defined(__cplusplus)
 
-#define WELCOME_MSG (CUSTOM_MENDEL_NAME " OK.")
+#define WELCOME_MSG (CUSTOM_MENDEL_NAME)
 
 // LCD Menu Messages
 //internationalized messages
