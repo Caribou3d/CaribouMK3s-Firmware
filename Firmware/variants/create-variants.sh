@@ -6,7 +6,7 @@
 # TYPE		= Printer type			: MK25, MK25S, MK3, MK3S
 #
 # BOARD		= Controller board		: EINSy10a, RAMBo13a
-# 
+#
 # HEIGHT	= Height of printer		: 210, 220, 320, 420
 #
 # MOD 		= Modification			: BE   = Bondtech Extruder for Prusa
@@ -121,7 +121,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
 				# Inverted Y-Motor only for MK3
 				if [ $BOARD == "EINSy10a" ]; then
-					sed -i -e "s/^#define INVERT_Y_DIR 0*/#define INVERT_Y_DIR 1/g" ${VARIANT}
+					sed -i -e "s/^#define INVERT_Y_DIR 0*/#define INVERT_Y_DIR 0/g" ${VARIANT}
 				fi
 				# Printer Height
 				sed -i -e "s/^#define Z_MAX_POS 210*/#define Z_MAX_POS ${HEIGHT}/g" ${VARIANT}
@@ -131,11 +131,11 @@ for COMPANY in ${CompanyArray[@]}; do
 					sed -i -e "s/^#define EXTRUDER_ALTFAN_SPEED_SILENT 128*/#define EXTRUDER_ALTFAN_SPEED_SILENT 255/g" ${VARIANT}
 				fi
 			fi
-				# Display Type 
+				# Display Type
 			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
 		done
 	done
-done		
+done
 echo "End $COMPANY"
 
 ## MODS
@@ -200,7 +200,7 @@ for COMPANY in ${CompanyArray[@]}; do
 			sed -i -e 's/#define UNLOAD_FILAMENT_1 "G1 E-80 F7000"*/#define UNLOAD_FILAMENT_1 "G1 E-95 F7000"/' ${VARIANT}
 			sed -i -e 's/#define FILAMENTCHANGE_FINALRETRACT -80*/#define FILAMENTCHANGE_FINALRETRACT -95/' ${VARIANT}
 			sed -i -e 's/#define FILAMENTCHANGE_FINALFEED 70*/#define FILAMENTCHANGE_FINALFEED 80/' ${VARIANT}
-			# Display Type 
+			# Display Type
 			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
 			# Enable Bondtech E3d MMU settings
 			sed -i -e "s/\/\/#define BONDTECH_MK3S*/#define BONDTECH_MK3S/g" ${VARIANT}
@@ -245,7 +245,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				PRUSA_TYPE=$TYPE
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'-'$BASE_MOD'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
-			# Hotend Type 
+			# Hotend Type
 			sed -i -e 's/#define NOZZLE_TYPE "E3Dv6full"*/#define NOZZLE_TYPE "Mosquito"/' ${VARIANT}
 			# Enable Bondtech Mosquito MMU settings
 			sed -i -e "s/#define BONDTECH_MK3S*/\/\/#define BONDTECH_MK3S/g" ${VARIANT}
@@ -361,7 +361,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				PRUSA_TYPE=$TYPE
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'-'$BASE_MOD'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
-			# Hotend Type 
+			# Hotend Type
 			sed -i -e 's/#define NOZZLE_TYPE "Mosquito"*/#define NOZZLE_TYPE "Mosquito Magnum"/' ${VARIANT}
 			# Enable Bondtech Mosquito MMU settings
 			sed -i -e "s/#define BONDTECH_MOSQUITO*/\/\/#define BONDTECH_MOSQUITO/g" ${VARIANT}
@@ -455,7 +455,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				fi
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
-			# Hotend Type 
+			# Hotend Type
 			sed -i -e 's/#define NOZZLE_TYPE "E3Dv6full"*/#define NOZZLE_TYPE "Copperhead"/' ${VARIANT}
 			# Disable Extruder_Design_R3 for Caribou
 			sed -i -e "s/^#define EXTRUDER_DESIGN_R3*/\/\/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
@@ -474,7 +474,7 @@ for COMPANY in ${CompanyArray[@]}; do
 			sed -i -e 's/#define FILAMENTCHANGE_FINALRETRACT -80*/#define FILAMENTCHANGE_FINALRETRACT -40/' ${VARIANT}
 			sed -i -e 's/#define FILAMENTCHANGE_FIRSTFEED 70*/#define FILAMENTCHANGE_FIRSTFEED 5/' ${VARIANT}
 			sed -i -e 's/#define FILAMENTCHANGE_FINALFEED 25*/#define FILAMENTCHANGE_FINALFEED 20/' ${VARIANT}
-			# Display Type 
+			# Display Type
 			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
             # LGX PINDA xy offset
             sed -i -e "s/#define X_PROBE_OFFSET_FROM_EXTRUDER 23*/#define X_PROBE_OFFSET_FROM_EXTRUDER 22.25/g" ${VARIANT}
@@ -524,7 +524,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				fi
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
-			# Hotend Type 
+			# Hotend Type
 			sed -i -e 's/#define NOZZLE_TYPE "E3Dv6full"*/#define NOZZLE_TYPE "Mosquito"/' ${VARIANT}
 			# Printer Height
 			sed -i -e "s/^#define Z_MAX_POS ${HEIGHT}*/#define Z_MAX_POS ${LGXHEIGHT}/g" ${VARIANT}
@@ -542,7 +542,7 @@ for COMPANY in ${CompanyArray[@]}; do
 			# Enable Bondtech Mosquito MMU settings
 			sed -i -e "s/#define BONDTECH_MK3S*/\/\/#define BONDTECH_MK3S/g" ${VARIANT}
 			sed -i -e "s/\/\/#define BONDTECH_MOSQUITO*/#define BONDTECH_MOSQUITO/g" ${VARIANT}
-			# Display Type 
+			# Display Type
 			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
 		done
 	done
@@ -589,7 +589,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				fi
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
-			# Hotend Type 
+			# Hotend Type
 			sed -i -e 's/#define NOZZLE_TYPE "E3Dv6full"*/#define NOZZLE_TYPE "Mosquito Magnum"/' ${VARIANT}
 			# Printer Height
 			sed -i -e "s/^#define Z_MAX_POS ${HEIGHT}*/#define Z_MAX_POS ${LGXHEIGHT}/g" ${VARIANT}
@@ -607,10 +607,9 @@ for COMPANY in ${CompanyArray[@]}; do
 			# Enable Bondtech Mosquito MMU settings
 			sed -i -e "s/#define BONDTECH_MK3S*/\/\/#define BONDTECH_MK3S/g" ${VARIANT}
 			sed -i -e "s/\/\/#define BONDTECH_MOSQUITO*/#define BONDTECH_MOSQUITO/g" ${VARIANT}
-			# Display Type 
+			# Display Type
 			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
 		done
 	done
 done
 echo "End $COMPANY LGMM"
-
