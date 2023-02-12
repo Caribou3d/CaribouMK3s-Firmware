@@ -2,18 +2,12 @@
 #
 # Version 1.0.1 Build 10
 #
-# Version 1.0.1
-#
 # config.sh - multi-language support configuration script
 #  Definition of absolute paths etc.
 #  This file is 'included' in all scripts.
 #
 #############################################################################
 # Change log:
-# 9 June 2020, 3d-gussner, Added version and Change log
-# 9 June 2020, 3d-gussner, colored output
-#############################################################################
-#
 # 31 May  2018, XPila,     Initial
 # 17 Dec. 2021, 3d-gussner, Change default Arduino path to by PF-build.sh
 #                           created one
@@ -37,13 +31,7 @@ export LNGDIR=$LNGDIR
 
 # Arduino main folder:
 if [ -z "$ARDUINO" ]; then
-    export ARDUINO=../../PF-build-env-1.0.6/1.8.5-1.0.0-linux-64 #C:/arduino-1.8.5
-fi
-#
-
-# Arduino builder:
-if [ -z "$BUILDER" ]; then
-    export BUILDER=$ARDUINO/arduino-builder
+    export ARDUINO=../../PF-build-env-1.0.6/1.8.5-1.0.4-linux-64 #C:/arduino-1.8.5
 fi
 #
 # AVR gcc tools:
@@ -121,20 +109,13 @@ color 2 "config.sh started" >&2
 _err=0
 
 echo -n " Arduino main folder: " >&2
-if [ -e $ARDUINO ]; then echo "$(tput setaf 2)OK$(tput sgr0)" >&2; else echo "$(tput setaf 1)NG!$(tput sgr0)" >&2; _err=1; fi
-
-echo -n " Arduino builder: " >&2
-if [ -e $BUILDER ]; then echo "$(tput setaf 2)OK$(tput sgr0)" >&2; else echo "$(tput setaf 1)NG!$(tput sgr0)" >&2; _err=2; fi
+if [ -d $ARDUINO ]; then ok >&2; else ng >&2; _err=1; fi
 
 echo " AVR gcc tools:" >&2
 echo -n "   objcopy " >&2
 if [ -e $OBJCOPY ]; then ok >&2; else ng >&2; _err=3; fi
 
 echo -n " Output folder: " >&2
-if [ -e $OUTDIR ]; then echo "$(tput setaf 2)OK$(tput sgr0)" >&2; else echo "$(tput setaf 1)NG!$(tput sgr0)" >&2; _err=5; fi
-
-echo -n " Objects folder: " >&2
-if [ -e $OBJDIR ]; then echo "$(tput setaf 2)OK$(tput sgr0)" >&2; else echo "$(tput setaf 1)NG!$(tput sgr0)" >&2; _err=6; fi
 if [ -d $OUTDIR ]; then ok >&2; else ng >&2; _err=5; fi
 
 echo -n " Output elf file: " >&2
