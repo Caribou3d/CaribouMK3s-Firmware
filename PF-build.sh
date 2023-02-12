@@ -556,7 +556,7 @@ fi
 #### Start: Set build environment
 set_build_env_variables()
 {
-BUILD_ENV="1.0.8"
+BUILD_ENV="1.0.6"
 BOARD="caribou3d_einsy_rambo"
 BOARD_PACKAGE_NAME="Caribou3dResearch"
 if [ "$ARDUINO_ENV" == "1.8.19" ]; then
@@ -564,32 +564,14 @@ if [ "$ARDUINO_ENV" == "1.8.19" ]; then
 else
     BOARD_VERSION="1.0.0"
 fi
+
 BOARD_VERSION="1.0.0"
-BUILD_ENV="1.0.6"
-#BOARD_URL="https://raw.githubusercontent.com/3d-gussner/Arduino_Boards/Prusa_Merge_v1.0.3/IDE_Board_Manager/package_prusa3d_index.json"
-BOARD_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/package_caribou3d_index.json"
+
 BOARD_FILENAME="caribou3dboards"
-#BOARD_FILE_URL="https://raw.githubusercontent.com/3d-gussner/Arduino_Boards/Prusa_Merge_v1.0.3/IDE_Board_Manager/prusa3dboards-1.0.3.tar.bz2"
-BOARD_FILE_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/caribou3dboards-1.0.0.tar.bz2"
+BOARD_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/package_caribou3d_index.json"
+BOARD_FILE_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/caribou3dboards-1.0.6.tar.bz2"
+
 PF_BUILD_FILE_URL="https://github.com/3d-gussner/PF-build-env-1/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
-BUILD_ENV="1.0.6"
-
-
-
-#if [ "$ARDUINO_ENV" == "1.8.19" ]; then
-#    BOARD_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/package_prusa3d_index.json"
-#    #BOARD_URL="https://raw.githubusercontent.com/3d-gussner/Arduino_Boards/master/IDE_Board_Manager/package_prusa3d_index.json"
-#else
-#    BOARD_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/package_prusa3d_index.json"
-#fi
-#BOARD_FILENAME="prusa3dboards"
-#if [ "$ARDUINO_ENV" == "1.8.19" ]; then
-#    BOARD_FILE_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/prusa3dboards-$BOARD_VERSION.tar.bz2"
-#    #BOARD_FILE_URL="https://raw.githubusercontent.com/3d-gussner/Arduino_Boards/master/IDE_Board_Manager/prusa3dboards-$BOARD_VERSION.tar.bz2"
-#else
-#    BOARD_FILE_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/prusa3dboards-$BOARD_VERSION.tar.bz2"
-#fi
-#PF_BUILD_FILE_URL="https://github.com/3d-gussner/PF-build-env-1/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
 
 if [[ "$BOARD_VERSION" == "1.0.3" || "$BOARD_VERSION" == "1.0.2" || "$BOARD_VERSION" == "1.0.1" ]]; then
     PF_BUILD_FILE_URL="https://github.com/prusa3d/PF-build-env/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
@@ -598,6 +580,7 @@ LIB="PrusaLibrary"
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 MULTI_LANGUAGE=("MULTI" "CZ" "DE" "ES" "FR" "IT" "PL" "NL")
 }
+BUILD_ENV="1.0.8"
 #### End: Set build environment
 
 #### Start: List few useful data
@@ -973,12 +956,14 @@ if [ ! -z "$build_flag" ] ; then
     fi
 fi
 
+echo
+
 #Check git branch has changed
 if [ ! -z "git_available" ]; then
-    BRANCH=$(git branch --show-current)
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
     echo "Current branch is:" $BRANCH
     if [ ! -f "$SCRIPT_PATH/../PF-build.branch" ]; then
-        #echo "$BRANCH" >| $SCRIPT_PATH/../PF-build.branch
+        echo "$BRANCH" >| $SCRIPT_PATH/../PF-build.branch
         echo "created PF-build.branch file"
     else
         PRE_BRANCH=$(cat "$SCRIPT_PATH/../PF-build.branch")
@@ -1277,7 +1262,8 @@ compile_en_firmware()
 
     ## Check board flash size
     CURRENT_BOARD_FLASH=$(grep "#define FLASHEND" $BUILD_ENV_PATH/hardware/tools/avr/avr/include/avr/iom2560.h | sed -e's/.* //g'|cut -d ' ' -f2 |tr -d ' \t\n\r')
-    CURRENT_BOARD_maximum_size=$(grep "prusa_einsy_rambo.upload.maximum_size" $BUILD_ENV_PATH/portable/packages/$BOARD_PACKAGE_NAME/hardware/avr/$BOARD_VERSION/boards.txt |cut -d '=' -f2|tr -d ' \t\n\r')
+    CURRENT_BOARD_maximum_size=$(grep "caribou3d_einsy_rambo.upload.maximum_size" $BUILD_ENV_PATH/portable/packages/$BOARD_PACKAGE_NAME/hardware/avr/$BOARD_VERSION/boards.txt |cut -d '=' -f2|tr -d ' \t\n\r')
+    
     if [[ $CURRENT_BOARD_FLASH != "0x3FFFF" || $CURRENT_BOARD_maximum_size != "253952" ]] ; then
         echo "$(tput setaf 1)Board flash has been modified or not reset$(tput sgr 0)"
         echo "Current flash size:" $CURRENT_BOARD_FLASH
@@ -1311,7 +1297,7 @@ compile_en_firmware()
         echo "New max.  size:" $BOARD_maximum_size
         read -t 5 -p "To cancel press $(tput setaf 1)CRTL+C$(tput sgr 0)"
         sed -i -- "s/^#define FLASHEND .*/#define FLASHEND        ${BOARD_FLASH}/g" $BUILD_ENV_PATH/hardware/tools/avr/avr/include/avr/iom2560.h
-        sed -i -- "s/^prusa_einsy_rambo.upload.maximum_size.*/prusa_einsy_rambo.upload.maximum_size=${BOARD_maximum_size}/g" $BUILD_ENV_PATH/portable/packages/$BOARD_PACKAGE_NAME/hardware/avr/$BOARD_VERSION/boards.txt
+        sed -i -- "s/^caribou3d_einsy_rambo.upload.maximum_size.*/caribou3d_einsy_rambo.upload.maximum_size=${BOARD_maximum_size}/g" $BUILD_ENV_PATH/portable/packages/$BOARD_PACKAGE_NAME/hardware/avr/$BOARD_VERSION/boards.txt
         BOARD_FLASH_MODIFIED=1
     fi
 
