@@ -3697,13 +3697,16 @@ void gcode_M701()
 #ifdef FSENSOR_QUALITY
 		fsensor_oq_meassure_start(40);
 #endif //FSENSOR_QUALITY
-
-        const int feed_mm_before_raising = 30;
-        static_assert(feed_mm_before_raising <= FILAMENTCHANGE_FIRSTFEED);
+		#ifdef BONDTECH_LGXC
+    const int feed_mm_before_raising = 4;
+    #else
+    const int feed_mm_before_raising = 30;
+    #endif
+    static_assert(feed_mm_before_raising <= FILAMENTCHANGE_FIRSTFEED);
 
 		lcd_setstatuspgm(_T(MSG_LOADING_FILAMENT));
 		#ifdef BONDTECH_LGXC
-		    current_position[E_AXIS] += 20;
+		  current_position[E_AXIS] += 20;
                 #else
 		    current_position[E_AXIS] += 40;
                 #endif //BONDTECH_LGXC
