@@ -553,34 +553,72 @@ fi
 # End: Check python ... needed during language build
 
 
-#### Start: Set build environment
+
+#### Start: Set build environment 
 set_build_env_variables()
 {
-BUILD_ENV="1.0.6"
+BUILD_ENV="1.0.8"
 BOARD="caribou3d_einsy_rambo"
-BOARD_PACKAGE_NAME="Caribou3dResearch"
+BOARD_PACKAGE_NAME="CaribouResearch"
 if [ "$ARDUINO_ENV" == "1.8.19" ]; then
     BOARD_VERSION="1.0.6"
 else
-    BOARD_VERSION="1.0.0"
+    BOARD_VERSION="1.0.4"
 fi
-
-BOARD_VERSION="1.0.0"
-
+if [ "$ARDUINO_ENV" == "1.8.19" ]; then
+    BOARD_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/package_caribou3d_index.json"
+#    BOARD_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/package_prusa3d_index.json"
+    #BOARD_URL="https://raw.githubusercontent.com/3d-gussner/Arduino_Boards/master/IDE_Board_Manager/package_prusa3d_index.json"
+else
+    BOARD_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/package_prusa3d_index.json"
+fi
 BOARD_FILENAME="caribou3dboards"
-BOARD_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/package_caribou3d_index.json"
-BOARD_FILE_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/caribou3dboards-1.0.6.tar.bz2"
-
-PF_BUILD_FILE_URL="https://github.com/3d-gussner/PF-build-env-1/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
-
+#BOARD_FILENAME="prusa3dboards"
+if [ "$ARDUINO_ENV" == "1.8.19" ]; then
+    BOARD_FILE_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/caribou3dboards-1.0.6.tar.bz2"
+#    BOARD_FILE_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/prusa3dboards-$BOARD_VERSION.tar.bz2"
+    #BOARD_FILE_URL="https://raw.githubusercontent.com/3d-gussner/Arduino_Boards/master/IDE_Board_Manager/prusa3dboards-$BOARD_VERSION.tar.bz2"
+else
+    BOARD_FILE_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/caribou3dboards-1.0.6.tar.bz2"
+#    BOARD_FILE_URL="https://raw.githubusercontent.com/prusa3d/Arduino_Boards/master/IDE_Board_Manager/prusa3dboards-$BOARD_VERSION.tar.bz2"
+fi
+#PF_BUILD_FILE_URL="https://github.com/3d-gussner/PF-build-env-1/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
 if [[ "$BOARD_VERSION" == "1.0.3" || "$BOARD_VERSION" == "1.0.2" || "$BOARD_VERSION" == "1.0.1" ]]; then
     PF_BUILD_FILE_URL="https://github.com/prusa3d/PF-build-env/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
 fi
 LIB="PrusaLibrary"
-SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-MULTI_LANGUAGE=("MULTI" "CZ" "DE" "ES" "FR" "IT" "PL" "NL")
 }
-BUILD_ENV="1.0.8"
+#### End: Set build environment
+
+
+##### Start: Set build environment
+#set_build_env_variables()
+##{
+#BUILD_ENV="1.0.8"
+#BOARD="caribou3d_einsy_rambo"
+#BOARD_PACKAGE_NAME="Caribou3dResearch"
+#if [ "$ARDUINO_ENV" == "1.8.19" ]; then
+#    BOARD_VERSION="1.0.6"
+#else
+#    BOARD_VERSION="1.0.0"
+#fi
+#
+#BOARD_VERSION="1.0.6"
+#
+#BOARD_FILENAME="caribou3dboards"
+#BOARD_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/package_caribou3d_index.json"
+#BOARD_FILE_URL="https://raw.githubusercontent.com/caribou3d/Arduino_Boards/master/IDE_Board_Manager/caribou3dboards-1.0.6.tar.bz2"
+#
+#PF_BUILD_FILE_URL="https://github.com/3d-gussner/PF-build-env-1/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
+#
+#if [[ "$BOARD_VERSION" == "1.0.3" || "$BOARD_VERSION" == "1.0.2" || "$BOARD_VERSION" == "1.0.1" ]]; then
+#    PF_BUILD_FILE_URL="https://github.com/prusa3d/PF-build-env/releases/download/$BUILD_ENV-WinLin/PF-build-env-WinLin-$BUILD_ENV.zip"
+#fi
+#LIB="PrusaLibrary"
+#SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+#MULTI_LANGUAGE=("MULTI" "CZ" "DE" "ES" "FR" "IT" "PL" "NL")
+#}
+#BUILD_ENV="1.0.8"
 #### End: Set build environment
 
 #### Start: List few useful data
@@ -737,6 +775,8 @@ fi
 download_prepare_Prusa_build_files()
 {
 # Download and extract PrusaResearchRambo board
+echo $BOARD_FILENAME-$BOARD_VERSION.tar.bz2
+
 if [ ! -f "$BOARD_FILENAME-$BOARD_VERSION.tar.bz2" ]; then
     echo "$(tput setaf 6)Downloading Prusa Research AVR MK3 RAMBo EINSy build environment...$(tput setaf 2)"
     if [ $OUTPUT == "1" ] ; then
@@ -744,6 +784,8 @@ if [ ! -f "$BOARD_FILENAME-$BOARD_VERSION.tar.bz2" ]; then
     fi
     wget $BOARD_FILE_URL || failures 8
 fi
+echo "../PF-build-env-$BUILD_ENV/$ARDUINO_ENV-$BOARD_VERSION-$TARGET_OS-$Processor/portable/packages/$BOARD_PACKAGE_NAME/hardware/avr/$BOARD_VERSION"
+echo "../PF-build-env-$BUILD_ENV/$BOARD_FILENAME-$ARDUINO_ENV-$BOARD_VERSION-$TARGET_OS-$Processor.txt"
 if [[ ! -d "../PF-build-env-$BUILD_ENV/$ARDUINO_ENV-$BOARD_VERSION-$TARGET_OS-$Processor/portable/packages/$BOARD_PACKAGE_NAME/hardware/avr/$BOARD_VERSION" || ! -e "../PF-build-env-$BUILD_ENV/$BOARD_FILENAME-$ARDUINO_ENV-$BOARD_VERSION-$TARGET_OS-$Processor.txt" ]]; then
     echo "$(tput setaf 6)Unzipping $BOARD_PACKAGE_NAME Arduino IDE portable...$(tput setaf 2)"
     if [ $OUTPUT == "1" ] ; then

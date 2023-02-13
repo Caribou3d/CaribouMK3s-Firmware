@@ -28,7 +28,7 @@ extern PGM_P sPrinterName;
 #endif
 
 #define FW_COMMIT_NR 6525
-#define FW_COMMIT_HASH "e3026cf5"
+#define FW_COMMIT_HASH "a6702c00"
 
 // FW_VERSION_UNKNOWN means this is an unofficial build.
 // The firmware should only be checked into github with this symbol.
