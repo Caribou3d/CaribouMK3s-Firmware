@@ -789,7 +789,7 @@ void lcd_status_screen()                          // NOT static due to using ins
 	if (lcd_draw_update)
 	{
 	#ifndef WEH002004_OLED //Refreshing the Status Screen is too noticible on OLED display
-	{	// Redraw the main screen every second (see LCD_UPDATE_INTERVAL).
+		// Redraw the main screen every second (see LCD_UPDATE_INTERVAL).
 		// This is easier then trying keep track of all things that change on the screen
 		lcd_status_update_delay = 10;
 		ReInitLCD++;
