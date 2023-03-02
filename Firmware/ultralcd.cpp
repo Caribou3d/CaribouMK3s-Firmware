@@ -783,12 +783,8 @@ void lcd_status_screen()                          // NOT static due to using ins
 	if (lcd_status_update_delay)
 		lcd_status_update_delay--;
 	else
-		lcd_draw_update = 1;
-
-
-	if (lcd_draw_update)
 	{
-	#ifndef WEH002004_OLED //Refreshing the Status Screen is too noticible on OLED display
+//	#ifndef WEH002004_OLED //Refreshing the Status Screen is too noticible on OLED display
 		// Redraw the main screen every second (see LCD_UPDATE_INTERVAL).
 		// This is easier then trying keep track of all things that change on the screen
 		lcd_status_update_delay = 10;
@@ -803,7 +799,7 @@ void lcd_status_screen()                          // NOT static due to using ins
 			if ((ReInitLCD % 10) == 0)
 				lcd_refresh_noclear(); //to maybe revive the LCD if static electricity killed it.
 		}
-	#endif
+//	#endif
 		lcdui_print_status_screen();
 
 		prusa_statistics_update_from_status_screen();
