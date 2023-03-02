@@ -1360,8 +1360,7 @@ compile_en_firmware()
     #read -t 5 -p "Press Enter..."
     echo
 
-    echo "Start to build Prusa Firmware ..."
-    echo "Using variant $VARIANT$(tput setaf 3)"
+    echo "Starting to build Caribou firmware using variant $VARIANT$(tput setaf 3) ..."
     if [ $OUTPUT == "1" ] ; then
         sleep 2
     fi
