@@ -351,7 +351,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-R"*/#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-'$MOD'"/g' ${VARIANT}
 			else
 				PRUSA_TYPE=$TYPE
-				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'-R"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
 			# Enable Extruder_Design_R3 for Caribou
 			sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
@@ -404,7 +404,7 @@ for COMPANY in ${CompanyArray[@]}; do
 				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-RH"*/#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-'$MOD'"/g' ${VARIANT}
 			else
 				PRUSA_TYPE=$TYPE
-				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa '$PRUSA_TYPE'-RHF60"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
 			fi
 			# Enable Extruder_Design_R3 for Caribou
 			sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}

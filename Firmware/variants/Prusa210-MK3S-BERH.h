@@ -17,7 +17,7 @@
 #define NOZZLE_TYPE "E3DREVO_HF_60W"
 
 // Printer name
-#define CUSTOM_MENDEL_NAME "Prusa MK3S-RHF60"
+#define CUSTOM_MENDEL_NAME "Prusa i3 MK3S-BERH"
 
 // WEH002004 OLED Display uncomment WEH002004_OLED if have this kind of display
 #define WEH002004_OLED
