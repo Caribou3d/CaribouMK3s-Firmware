@@ -1,6 +1,6 @@
 //xyzcal.cpp - xyz calibration with image processing
 
-#include "Configuration_prusa.h"
+#include "Configuration_var.h"
 #ifdef NEW_XYZCAL
 
 #include "xyzcal.h"
@@ -135,9 +135,9 @@ pos_mm_t pos_2_mm(float pos){
 	return pos * 0.01f;
 }
 
-void xyzcal_meassure_center(void)
+void xyzcal_measure_enter(void)
 {
-	DBG(_n("xyzcal_meassure_center\n"));
+	DBG(_n("xyzcal_measure_enter\n"));
 	lcd_puts_at_P(4,3,PSTR("Measure center  ")); ////MSG_MEASURE_CENTER c=16
 	// disable heaters and stop motion before we initialize sm4
 	disable_heater();
@@ -155,9 +155,9 @@ void xyzcal_meassure_center(void)
 	sm4_calc_delay_cb = xyzcal_calc_delay;
 }
 
-void xyzcal_meassure_leave(void)
+void xyzcal_measure_leave(void)
 {
-	DBG(_n("xyzcal_meassure_leave\n"));
+	DBG(_n("xyzcal_measure_leave\n"));
 	lcd_set_cursor(4,3);
 	lcd_space(16);
 
@@ -227,9 +227,9 @@ uint16_t xyzcal_calc_delay(uint16_t nd, uint16_t dd)
 		if (del_us > 50) return del_us - 50;
 	}
 
-//	uint16_t del_us = (uint16_t)(((float)1000000 / xyzcal_sm4_v) + 0.5);		
-//	uint16_t del_us = (uint32_t)1000000 / xyzcal_sm4_v;		
-//	uint16_t del_us = 100;		
+//	uint16_t del_us = (uint16_t)(((float)1000000 / xyzcal_sm4_v) + 0.5);
+//	uint16_t del_us = (uint32_t)1000000 / xyzcal_sm4_v;
+//	uint16_t del_us = 100;
 //	uint16_t del_us = (uint16_t)10000 / xyzcal_sm4_v;
 //	v += (ac * del_us + 500) / 1000;
 //	xyzcal_sm4_v += (xyzcal_sm4_ac * del_us) / 1000;
@@ -281,7 +281,7 @@ bool xyzcal_spiral2(int16_t cx, int16_t cy, int16_t z0, int16_t dz, int16_t radi
 	uint8_t k = 720 / (dad_max - dad_min); //delta calculation constant
 	ad = 0;
 	if (pad) ad = *pad % 720;
-	
+
     //@size=214
 	DBG(_n("xyzcal_spiral2 cx=%d cy=%d z0=%d dz=%d radius=%d ad=%d\n"), cx, cy, z0, dz, radius, ad);
 	// lcd_set_cursor(0, 4);
@@ -344,10 +344,10 @@ bool xyzcal_spiral8(int16_t cx, int16_t cy, int16_t z0, int16_t dz, int16_t radi
 	return ret;
 }
 
-#ifdef XYZCAL_MEASSURE_PINDA_HYSTEREZIS
-int8_t xyzcal_meassure_pinda_hysterezis(int16_t min_z, int16_t max_z, uint16_t delay_us, uint8_t samples)
+#ifdef XYZCAL_MEASURE_PINDA_HYSTERESIS
+int8_t xyzcal_measure_pinda_hysteresis(int16_t min_z, int16_t max_z, uint16_t delay_us, uint8_t samples)
 {
-	DBG(_n("xyzcal_meassure_pinda_hysterezis\n"));
+	DBG(_n("xyzcal_measure_pinda_hysteresis\n"));
 	int8_t ret = -1; // PINDA signal error
 	int16_t z = _Z;
 	int16_t sum_up = 0;
@@ -384,7 +384,7 @@ int8_t xyzcal_meassure_pinda_hysterezis(int16_t min_z, int16_t max_z, uint16_t d
 			if (abs(up - dn) > XYZCAL_PINDA_HYST_DIF)
 				ret = -2; // difference between up-dn to high
 			else if ((hyst < XYZCAL_PINDA_HYST_MIN) || (hyst > XYZCAL_PINDA_HYST_MAX))
-				ret = -3; // hysterezis out of range
+				ret = -3; // hysteresis out of range
 			else
 				ret = hyst;
 		}
@@ -392,7 +392,7 @@ int8_t xyzcal_meassure_pinda_hysterezis(int16_t min_z, int16_t max_z, uint16_t d
 	xyzcal_lineXYZ_to(_X, _Y, z, delay_us, 0);
 	return ret;
 }
-#endif //XYZCAL_MEASSURE_PINDA_HYSTEREZIS
+#endif //XYZCAL_MEASURE_PINDA_HYSTERESIS
 
 void print_hysteresis(int16_t min_z, int16_t max_z, int16_t step){
 	int16_t delay_us = 600;
@@ -415,22 +415,20 @@ void print_hysteresis(int16_t min_z, int16_t max_z, int16_t step){
 	}
 }
 
-void update_position_1_step(uint8_t axis, uint8_t dir){
-	if (axis & X_AXIS_MASK)
-		_X_ += dir & X_AXIS_MASK ? -1 : 1;
-	if (axis & Y_AXIS_MASK)
-		_Y_ += dir & Y_AXIS_MASK ? -1 : 1;
-	if (axis & Z_AXIS_MASK)
-		_Z_ += dir & Z_AXIS_MASK ? -1 : 1;
+static void update_position_1_step(const uint8_t axis, const uint8_t dir) {
+	for (uint8_t i = X_AXIS, mask = X_AXIS_MASK; i <= Z_AXIS; i++, mask <<= 1) {
+		if (axis & mask) {
+			count_position[i] += dir & mask ? -1L : 1L;
+		}
+	}
 }
 
-void set_axes_dir(uint8_t axes, uint8_t dir){
-	if (axes & X_AXIS_MASK)
-		sm4_set_dir(X_AXIS, dir & X_AXIS_MASK);
-	if (axes & Y_AXIS_MASK)
-		sm4_set_dir(Y_AXIS, dir & Y_AXIS_MASK);
-	if (axes & Z_AXIS_MASK)
-		sm4_set_dir(Z_AXIS, dir & Z_AXIS_MASK);
+static void __attribute__((noinline)) set_axes_dir(const uint8_t axis, const uint8_t dir) {
+	for (uint8_t i = X_AXIS, mask = X_AXIS_MASK; i <= Z_AXIS; i++, mask <<= 1) {
+		if (axis & mask) {
+			sm4_set_dir(i, dir & mask);
+		}
+	}
 }
 
 /// Accelerate up to max.speed (defined by @min_delay_us)
@@ -463,7 +461,7 @@ void accelerate_1_step(uint8_t axes, int16_t acc, uint16_t &delay_us, uint16_t m
 		else
 			t1++;
 	}
-	
+
 	//DBG(_n("%d "), t1);
 
 	delayMicroseconds(t1);
@@ -553,7 +551,7 @@ void go_manhattan(int16_t x, int16_t y, int16_t z, int16_t acc, uint16_t min_del
 	// DBG(_n("\n"));
 }
 
-void xyzcal_scan_pixels_32x32_Zhop(int16_t cx, int16_t cy, int16_t min_z, int16_t max_z, uint16_t delay_us, uint8_t *pixels){
+void __attribute__((noinline)) xyzcal_scan_pixels_32x32_Zhop(int16_t cx, int16_t cy, int16_t min_z, int16_t max_z, uint16_t delay_us, uint8_t *pixels){
 	if (!pixels)
 		return;
 	int16_t z_trig;
@@ -587,8 +585,8 @@ void xyzcal_scan_pixels_32x32_Zhop(int16_t cx, int16_t cy, int16_t min_z, int16_
 
 				accelerate(axes, dir, Z_ACCEL, current_delay_us, Z_MIN_DELAY, half_x);
 				go_and_stop(axes, dir, Z_ACCEL, current_delay_us, length_x - half_x);
-				
-				
+
+
 				z_trig = min_z;
 
 				/// move up to un-trigger (surpress hysteresis)
@@ -805,7 +803,7 @@ void sort(float *points, const uint8_t num_points){
 				SWAP(points[j], points[j + 1]);
 		}
 	}
-	
+
 	// DBG(_n("Sorted: "));
 	// for (uint8_t i = 0; i < num_points; ++i)
 	// 	DBG(_n("%f "), points[i]);
@@ -836,13 +834,13 @@ void dynamic_circle(uint8_t *matrix_32x32, float &x, float &y, float &r, uint8_t
 	const constexpr uint8_t target_z = 32; ///< target z height of the circle
 	const uint8_t blocks = num_points;
 	float shifts_x[blocks];
-	float shifts_y[blocks];	
-	float shifts_r[blocks];	
+	float shifts_y[blocks];
+	float shifts_r[blocks];
 
 	// DBG(_n(" [%f, %f][%f] start circle\n"), x, y, r);
 
 	for (int8_t i = iterations; i > 0; --i){
-	
+
         //@size=128B
 		// DBG(_n(" [%f, %f][%f] circle\n"), x, y, r);
 
@@ -905,7 +903,7 @@ uint8_t find_patterns(uint8_t *matrix32, uint16_t *pattern08, uint16_t *pattern1
 		row = r08;
 		return match08;
 	}
-	
+
 	col = c10;
 	row = r10;
 	return match10;
@@ -1006,10 +1004,10 @@ BedSkewOffsetDetectionResultType xyzcal_scan_and_process(){
 BedSkewOffsetDetectionResultType xyzcal_find_bed_induction_sensor_point_xy(void) {
     // DBG(_n("xyzcal_find_bed_induction_sensor_point_xy x=%ld y=%ld z=%ld\n"), count_position[X_AXIS], count_position[Y_AXIS], count_position[Z_AXIS]);
 	BedSkewOffsetDetectionResultType ret = BED_SKEW_OFFSET_DETECTION_POINT_NOT_FOUND;
-	xyzcal_meassure_center();
+	xyzcal_measure_enter();
 	if (xyzcal_searchZ())
 		ret = xyzcal_scan_and_process();
-	xyzcal_meassure_leave();
+	xyzcal_measure_leave();
 	return ret;
 }
 

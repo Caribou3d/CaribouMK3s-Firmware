@@ -77,6 +77,7 @@ sleep 1
 rm Caribou*
 rm Prusa*
 
+
 ##### MK25/MK25S/MK3/MK3S Variants
 for COMPANY in ${CompanyArray[@]}; do
 	echo "Start $COMPANY"
@@ -104,8 +105,8 @@ for COMPANY in ${CompanyArray[@]}; do
 			#echo $HEIGHT
 			#echo $VARIANT
 			#sleep 10
+			echo $VARIANT
 			cp ${BASE} ${VARIANT}
-			ls
 			# Printer Display Name
 			if [ $TYPE == "MK25" ]; then
 				PRUSA_TYPE="MK2.5"
@@ -135,8 +136,121 @@ for COMPANY in ${CompanyArray[@]}; do
 			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
 		done
 	done
+	echo "End $COMPANY"
 done
-echo "End $COMPANY"
+
+##### MK3/MK3S Variants with REVO hotend
+for COMPANY in ${CompanyArray[@]}; do
+    declare -a TypesMK3Array=( "MK3" "MK3S")
+	echo "Start $COMPANY-REVO"
+	for TYPE in ${TypesMK3Array[@]}; do
+		echo "Type: $TYPE"
+		BOARD="EINSy10a"
+		BASE="1_75mm_$TYPE-$BOARD-E3DREVO.h"
+		if [ $COMPANY == "Caribou" ]; then
+			declare -a HeightsArray=( 220 320 420)
+		elif [ $COMPANY == "Prusa" ]; then
+			declare -a HeightsArray=( 210 )
+		fi
+		for HEIGHT in ${HeightsArray[@]}; do
+			VARIANT="$COMPANY$HEIGHT-$TYPE-REVO.h"
+			#echo $COMPANY
+			#echo $BASE
+			#echo $TYPE
+			#echo $HEIGHT
+			#echo $VARIANT
+			#sleep 10
+			echo $VARIANT
+			cp ${BASE} ${VARIANT}
+			# Printer Display Name
+			if [ $TYPE == "MK25" ]; then
+				PRUSA_TYPE="MK2.5"
+			elif [ $TYPE == "MK25S" ]; then
+				PRUSA_TYPE="MK2.5S"
+			else
+				PRUSA_TYPE=$TYPE
+			fi
+			if [ $COMPANY == "Caribou" ]; then
+				# Modify printer name
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'-R"*/#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE-R'"/g' ${VARIANT}
+				# Enable Extruder_Design_R3 for Caribou
+				sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
+				# Inverted Y-Motor only for MK3
+				if [ $BOARD == "EINSy10a" ]; then
+					sed -i -e "s/^#define INVERT_Y_DIR 0*/#define INVERT_Y_DIR 0/g" ${VARIANT}
+				fi
+				# Printer Height
+				sed -i -e "s/^#define Z_MAX_POS 210*/#define Z_MAX_POS ${HEIGHT}/g" ${VARIANT}
+				# Disable PSU_Delta
+				sed -i -e "s/^#define PSU_Delta*/\/\/#define PSU_Delta/g" ${VARIANT}
+				if [ $TYPE == "MK3S" ] ; then
+					sed -i -e "s/^#define EXTRUDER_ALTFAN_SPEED_SILENT 128*/#define EXTRUDER_ALTFAN_SPEED_SILENT 255/g" ${VARIANT}
+				fi
+			fi
+				# Display Type
+			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
+		done
+	done
+	echo "End $COMPANY-REVO"
+done
+
+
+##### MK3/MK3S Variants with REVOHF hotend
+for COMPANY in ${CompanyArray[@]}; do
+    declare -a TypesMK3Array=( "MK3" "MK3S")
+	echo "Start $COMPANY-REVOHF"
+	for TYPE in ${TypesMK3Array[@]}; do
+		echo "Type: $TYPE"
+		BOARD="EINSy10a"
+		BASE="1_75mm_$TYPE-$BOARD-E3DREVO_HF_60W.h"
+		if [ $COMPANY == "Caribou" ]; then
+			declare -a HeightsArray=( 220 320 420)
+		elif [ $COMPANY == "Prusa" ]; then
+			declare -a HeightsArray=( 210 )
+		fi
+		for HEIGHT in ${HeightsArray[@]}; do
+			VARIANT="$COMPANY$HEIGHT-$TYPE-REVOHF.h"
+			#echo $COMPANY
+			#echo $BASE
+			#echo $TYPE
+			#echo $HEIGHT
+			#echo $VARIANT
+			#sleep 10
+			echo $VARIANT
+			cp ${BASE} ${VARIANT}
+			# Printer Display Name
+			if [ $TYPE == "MK25" ]; then
+				PRUSA_TYPE="MK2.5"
+			elif [ $TYPE == "MK25S" ]; then
+				PRUSA_TYPE="MK2.5S"
+			else
+				PRUSA_TYPE=$TYPE
+			fi
+			if [ $COMPANY == "Caribou" ]; then
+				# Modify printer name
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa '$PRUSA_TYPE'-RHF60"*/#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE-RH'"/g' ${VARIANT}
+				# Enable Extruder_Design_R3 for Caribou
+				sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
+				# Inverted Y-Motor only for MK3
+				if [ $BOARD == "EINSy10a" ]; then
+					sed -i -e "s/^#define INVERT_Y_DIR 0*/#define INVERT_Y_DIR 0/g" ${VARIANT}
+				fi
+				# Printer Height
+				sed -i -e "s/^#define Z_MAX_POS 210*/#define Z_MAX_POS ${HEIGHT}/g" ${VARIANT}
+				# Disable PSU_Delta
+				sed -i -e "s/^#define PSU_Delta*/\/\/#define PSU_Delta/g" ${VARIANT}
+				if [ $TYPE == "MK3S" ] ; then
+					sed -i -e "s/^#define EXTRUDER_ALTFAN_SPEED_SILENT 128*/#define EXTRUDER_ALTFAN_SPEED_SILENT 255/g" ${VARIANT}
+				fi
+			fi
+				# Display Type
+			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
+		done
+	done
+	echo "End $COMPANY-REVOHF"
+done
+
+
 
 ## MODS
 echo "Start $COMPANY BE"
@@ -206,9 +320,114 @@ for COMPANY in ${CompanyArray[@]}; do
 			sed -i -e "s/\/\/#define BONDTECH_MK3S*/#define BONDTECH_MK3S/g" ${VARIANT}
 		done
 	done
+	echo "End $COMPANY BE"
 done
-echo "End $COMPANY BE"
 
+echo "Start $COMPANY BER"
+MOD="BER" ##Bondtech Prusa Edition Extruder with REVO hotend for MK3/MK3S
+for COMPANY in ${CompanyArray[@]}; do
+    declare -a TypesMK3Array=( "MK3" "MK3S")
+	echo "Start $COMPANY-REVOHF"
+	for TYPE in ${TypesMK3Array[@]}; do
+		echo "Type: $TYPE"
+		BOARD="EINSy10a"
+		if [ $COMPANY == "Caribou" ]; then
+			declare -a HeightsArray=( 220 320 420)
+		elif [ $COMPANY == "Prusa" ]; then
+			declare -a HeightsArray=( 210 )
+		fi
+		for HEIGHT in ${HeightsArray[@]}; do
+			BASE="$COMPANY$HEIGHT-$TYPE-REVO.h"
+			VARIANT="$COMPANY$HEIGHT-$TYPE-$MOD.h"
+			BMGHEIGHT=$(( $HEIGHT + $BMGHeightDiff ))
+			#echo $BASE
+			#echo $TYPE
+			#echo $HEIGHT
+			#echo $BMGHEIGHT
+			echo $VARIANT
+			cp ${BASE} ${VARIANT}
+			# Modify printer name
+			if [ $COMPANY == "Caribou" ]; then
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-R"*/#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-'$MOD'"/g' ${VARIANT}
+			else
+				PRUSA_TYPE=$TYPE
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
+			fi
+			# Enable Extruder_Design_R3 for Caribou
+			sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
+			# Printer Height
+			sed -i -e "s/^#define Z_MAX_POS ${HEIGHT}*/#define Z_MAX_POS ${BMGHEIGHT}/g" ${VARIANT}
+			# E Steps for MK3 and MK3S with Bondetch extruder
+			sed -i -e 's/#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200\/8,280}*/#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200\/8,415}/' ${VARIANT}
+			# Microsteps
+			sed -i -e 's/#define TMC2130_USTEPS_E    32*/#define TMC2130_USTEPS_E    16/' ${VARIANT}
+			# Filament Load Distances (BPE gears are farther from the hotend)
+			sed -i -e 's/#define FILAMENTCHANGE_FIRSTFEED 70*/#define FILAMENTCHANGE_FIRSTFEED 80/' ${VARIANT}
+			sed -i -e 's/#define LOAD_FILAMENT_1 "G1 E70 F400"*/#define LOAD_FILAMENT_1 "G1 E80 F400"/' ${VARIANT}
+			sed -i -e 's/#define UNLOAD_FILAMENT_1 "G1 E-80 F7000"*/#define UNLOAD_FILAMENT_1 "G1 E-95 F7000"/' ${VARIANT}
+			sed -i -e 's/#define FILAMENTCHANGE_FINALRETRACT -80*/#define FILAMENTCHANGE_FINALRETRACT -95/' ${VARIANT}
+			sed -i -e 's/#define FILAMENTCHANGE_FINALFEED 70*/#define FILAMENTCHANGE_FINALFEED 80/' ${VARIANT}
+			# Display Type
+			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
+			# Enable Bondtech E3d MMU settings
+			sed -i -e "s/\/\/#define BONDTECH_MK3S*/#define BONDTECH_MK3S/g" ${VARIANT}
+		done
+	done
+	echo "End $COMPANY BER"
+done
+
+echo "Start $COMPANY BERH"
+MOD="BERH" ##Bondtech Prusa Edition Extruder with REVO high flow hotend for MK3/MK3S
+for COMPANY in ${CompanyArray[@]}; do
+    declare -a TypesMK3Array=( "MK3" "MK3S")
+	echo "Start $COMPANY-REVOHF"
+	for TYPE in ${TypesMK3Array[@]}; do
+		echo "Type: $TYPE"
+		BOARD="EINSy10a"
+		if [ $COMPANY == "Caribou" ]; then
+			declare -a HeightsArray=( 220 320 420)
+		elif [ $COMPANY == "Prusa" ]; then
+			declare -a HeightsArray=( 210 )
+		fi
+		for HEIGHT in ${HeightsArray[@]}; do
+			BASE="$COMPANY$HEIGHT-$TYPE-REVOHF.h"
+			VARIANT="$COMPANY$HEIGHT-$TYPE-$MOD.h"
+			BMGHEIGHT=$(( $HEIGHT + $BMGHeightDiff ))
+			#echo $BASE
+			#echo $TYPE
+			#echo $HEIGHT
+			#echo $BMGHEIGHT
+			echo $VARIANT
+			cp ${BASE} ${VARIANT}
+			# Modify printer name
+			if [ $COMPANY == "Caribou" ]; then
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-RH"*/#define CUSTOM_MENDEL_NAME "'$COMPANY$HEIGHT'-'$TYPE'-'$MOD'"/g' ${VARIANT}
+			else
+				PRUSA_TYPE=$TYPE
+				sed -i -e 's/^#define CUSTOM_MENDEL_NAME "Prusa i3 '$PRUSA_TYPE'"*/#define CUSTOM_MENDEL_NAME "Prusa i3 '$TYPE'-'$MOD'"/g' ${VARIANT}
+			fi
+			# Enable Extruder_Design_R3 for Caribou
+			sed -i -e "s/\/\/#define EXTRUDER_DESIGN_R3*/#define EXTRUDER_DESIGN_R3/g" ${VARIANT}
+			# Printer Height
+			sed -i -e "s/^#define Z_MAX_POS ${HEIGHT}*/#define Z_MAX_POS ${BMGHEIGHT}/g" ${VARIANT}
+			# E Steps for MK3 and MK3S with Bondetch extruder
+			sed -i -e 's/#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200\/8,280}*/#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200\/8,415}/' ${VARIANT}
+			# Microsteps
+			sed -i -e 's/#define TMC2130_USTEPS_E    32*/#define TMC2130_USTEPS_E    16/' ${VARIANT}
+			# Filament Load Distances (BPE gears are farther from the hotend)
+			sed -i -e 's/#define FILAMENTCHANGE_FIRSTFEED 70*/#define FILAMENTCHANGE_FIRSTFEED 80/' ${VARIANT}
+			sed -i -e 's/#define LOAD_FILAMENT_1 "G1 E70 F400"*/#define LOAD_FILAMENT_1 "G1 E80 F400"/' ${VARIANT}
+			sed -i -e 's/#define UNLOAD_FILAMENT_1 "G1 E-80 F7000"*/#define UNLOAD_FILAMENT_1 "G1 E-95 F7000"/' ${VARIANT}
+			sed -i -e 's/#define FILAMENTCHANGE_FINALRETRACT -80*/#define FILAMENTCHANGE_FINALRETRACT -95/' ${VARIANT}
+			sed -i -e 's/#define FILAMENTCHANGE_FINALFEED 70*/#define FILAMENTCHANGE_FINALFEED 80/' ${VARIANT}
+			# Display Type
+			sed -i -e "s/\/\/#define WEH002004_OLED*/#define WEH002004_OLED/g" ${VARIANT}
+			# Enable Bondtech E3d MMU settings
+			sed -i -e "s/\/\/#define BONDTECH_MK3S*/#define BONDTECH_MK3S/g" ${VARIANT}
+		done
+	done
+	echo "End $COMPANY BERH"
+done
 
 echo "Start $COMPANY BM"
 BASE_MOD=BE
@@ -252,8 +471,8 @@ for COMPANY in ${CompanyArray[@]}; do
 			sed -i -e "s/\/\/#define BONDTECH_MOSQUITO*/#define BONDTECH_MOSQUITO/g" ${VARIANT}
 		done
 	done
+	echo "End $COMPANY BM"
 done
-echo "End $COMPANY BM"
 
 echo "Start $COMPANY BMH"
 BASE_MOD=BM
@@ -296,8 +515,10 @@ for COMPANY in ${CompanyArray[@]}; do
 			sed -i -e "s/#define HEATER_0_MINTEMP 10*/#define HEATER_0_MINTEMP 5/g" ${VARIANT}
 		done
 	done
+	echo "End $COMPANY BM"
 done
 
+echo "Start $COMPANY BMH"
 for TYPE in ${BMQArray[@]}; do
 	echo "Type: $TYPE Base_MOD: $BASE_MOD MOD: $MOD"
 	if [[ "$TYPE" == "MK3" || "$TYPE" == "MK3S" ]]; then

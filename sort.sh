@@ -9,9 +9,9 @@
 #
 # Example: ./sort.sh ../PF-build-hex/FW381-Build2869 ../PF-build-hex/Firmware-381-Build2869
 #          The script will search the files in ./FW381-Build2869 and copy them to the destination ../Firmware-381-Build2869
-# 
+#
 # V1.2
-# 
+#
 # Change log
 # 17 Dec 2019, 3d-gussner, Initial version
 # 18 Dec 2019, 3d-gussner, add arguments $1 = Start path and $2 Destination path
@@ -22,6 +22,7 @@
 # 18 Jul 2021, wschadow, a zip file of the sorted files is generated
 # 14 Feb 2020, wschadow, added LGXM and LGXMM, only sort and zip .elf files
 # 11 Apr 2022, wschadow, updated output path and name of combined zip file
+# 29 Jul 2023, wschadow, added sorting of REVO files
 #
 # Folder tree:
 #.
@@ -40,13 +41,13 @@
 #│   │   └── Caribou
 #│   ├── MK3
 #│   │   │── BONDTECH
-#│   │   │   ├── E3DV6
+#│   │   │   ├── E3D: V6 REVO / REVO HF
 #│   │   │   ├── MOSQUITO
 #│   │   │   └── MOSQUITO_MAGNUM
 #│   │   └── Caribou
 #│   └── MK3S
 #│       │── BONDTECH
-#│       │    ├── E3DV6
+#│       │    ├── E3D: V6 REVO / REVO HF
 #│       │    ├── MOSQUITO
 #│       │    └── MOSQUITO_MAGNUM
 #│       │── Caribou
@@ -67,13 +68,13 @@
 #│   │   └── Caribou
 #│   ├── MK3
 #│   │   │── BONDTECH
-#│   │   │   ├── E3DV6
+#│   │   │   ├── E3D: V6 REVO / REVO HF
 #│   │   │   ├── MOSQUITO
 #│   │   │   └── MOSQUITO_MAGNUM
 #│   │   └── Caribou
 #│   └── MK3S
 #│       │── BONDTECH
-#│       │    ├── E3DV6
+#│       │    ├── E3D: V6 REVO / REVO HF
 #│       │    ├── MOSQUITO
 #│       │    └── MOSQUITO_MAGNUM
 #│       │── Caribou
@@ -94,13 +95,13 @@
 #│   │   └── Caribou
 #│   ├── MK3
 #│   │   │── BONDTECH
-#│   │   │   ├── E3DV6
+#│   │   │   ├── E3D: V6 REVO / REVO HF
 #│   │   │   ├── MOSQUITO
 #│   │   │   └── MOSQUITO_MAGNUM
 #│   │   └── Caribou
 #│   └── MK3S
 #│       │── BONDTECH
-#│       │    ├── E3DV6
+#│       │    ├── E3D: V6 REVO / REVO HF
 #│       │    ├── MOSQUITO
 #│       │    └── MOSQUITO_MAGNUM
 #│       │── Caribou
@@ -121,13 +122,13 @@
 #│   │   └── Prusa
 #│   ├── MK3
 #│   │   │── BONDTECH
-#│   │   │   ├── E3DV6
+#│   │   │   ├── E3D: V6 REVO / REVO HF
 #│   │   │   ├── MOSQUITO
 #│   │   │   └── MOSQUITO_MAGNUM
 #│   │   └── Prusa
 #│   └── MK3S
 #│       │── BONDTECH
-#│       │    ├── E3DV6
+#│       │    ├── E3D: V6 REVO / REVO HF
 #│       │    ├── MOSQUITO
 #│       │    └── MOSQUITO_MAGNUM
 #│       │── Prusa
@@ -185,7 +186,7 @@ declare -a TypesArray=( MK3S MK3 MK25S MK25 )
 # Array of printer heights
 declare -a HeightsArray=( 220 320 420)
 # Array of Bondtech folder names
-declare -a BondtechArray=( E3DV6 MOSQUITO MOSQUITO_MAGNUM )
+declare -a BondtechArray=( E3DV6 E3DREVO MOSQUITO MOSQUITO_MAGNUM )
 # End of set arrays
 
 
@@ -227,6 +228,12 @@ for COMPANY in ${CompanyArray[@]}; do
 					# At this moment we don't use another version
 					BONDTECH_SHORT2='BE'
 				;;
+					E3DREVO)
+					# For Bondtech E3D REVO
+					BONDTECH_SHORT='BER'
+					# At this moment we don't use another version
+					BONDTECH_SHORT2='BERH'
+				;;
 					MOSQUITO)
 					# For Bondtech MOSQUITO with E3D thermistor
 					BONDTECH_SHORT='BM'
@@ -259,6 +266,7 @@ for COMPANY in ${CompanyArray[@]}; do
 			# Find rest hex files and copy them to destination folder sorted by Type and Height
 		    mkdir -p $Destination_Path/$COMPANY$HEIGHT/$TYPE/$COMPANY
 			find -L $Start_Path -name "*$COMPANY$HEIGHT-$TYPE-Build*.hex" -type f -not -path "$Destination_Path/$COMPANY$HEIGHT/$TYPE/*" -exec cp {} $Destination_Path/$COMPANY$HEIGHT/$TYPE/$COMPANY \;
+			find -L $Start_Path -name "*$COMPANY$HEIGHT-$TYPE-REVO*-Build*.hex" -type f -not -path "$Destination_Path/$COMPANY$HEIGHT/$TYPE/*" -exec cp {} $Destination_Path/$COMPANY$HEIGHT/$TYPE/$COMPANY \;
 		done
 	done
 done
@@ -279,11 +287,10 @@ if [ $TARGET_OS == "windows" ]; then
     zip a $Destination_Path/$ZIPNAME.zip  $Destination_Path/* | tail -4
 else
  	ZIPNAMETMP=${Destination_Path%*/}
-	ZIPNAME=${ZIPNAMETMP##*/}	
+	ZIPNAME=${ZIPNAMETMP##*/}
 	pushd $Destination_Path
 	zip -r $Destination_Path/$ZIPNAME.zip  * | tail -4
 	popd
 fi
 echo
 echo '   ... done'
- 
