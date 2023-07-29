@@ -194,7 +194,6 @@
 # 10 Feb 2022, 3d-gussner, Add SRCDIR for compatibility with build server
 # 13 Feb 2022, leptun    , Fix -o for "Restoring" messages after failure
 # 11 Apr 2022, wschadow  , moved sorting out of loop, added a counter
-
 # 24 Feb 2022, 3d-gussner, Change to Arduino IDE 1.8.19 and Arduino boards 1.0.5
 #                          Fix DEV_STATUS to set correctly on RC/BETA/ALPHA/DEVEL
 #                          Fix atmegaMK404 Board mem and flash modifications
