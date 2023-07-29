@@ -1536,18 +1536,18 @@ cleanup_firmware()
 sort_hexfile()
 {
 # Sort hexfiles only when build ALL is selected
-#if [ ! -z $ALL_VARIANTS ]; then
-#	if [ "$ALL_VARIANTS" == "All" ]; then
+if [ ! -z $ALL_VARIANTS ]; then
+	if [ "$ALL_VARIANTS" == "All" ]; then
         echo
         echo 'sorting .hex files'
         echo
 		$SCRIPT_PATH/sort.sh $SCRIPT_PATH/../$OUTPUT_PATH $SCRIPT_PATH/../$OUTPUT_PATH-sorted/
-#	else
-#		echo "$(tput setaf 1)ALL_VARIANTS argument is wrong!$(tput sgr0)"
-#		echo "Only $(tput setaf 2)'All'$(tput sgr0) is allowed as argument!$(tput sgr0)"
-#		exit 37
-#	fi
-#fi
+	else
+		echo "$(tput setaf 1)ALL_VARIANTS argument is wrong!$(tput sgr0)"
+		echo "Only $(tput setaf 2)'All'$(tput sgr0) is allowed as argument!$(tput sgr0)"
+		exit 37
+	fi
+fi
 }
 
 #### Start: Finish script
