@@ -400,6 +400,10 @@
 #define FLEX_PREHEAT_HOTEND_TEMP 240
 #define FLEX_PREHEAT_HPB_TEMP 50
 
+#define LCD_JUMP_HOTEND_TEMP 200
+#define LCD_JUMP_BED_TEMP 50
+#define LCD_JUMP_FAN_SPEED 127
+
 /*------------------------------------
  THERMISTORS SETTINGS
  *------------------------------------*/
@@ -465,9 +469,6 @@
 
 #define MAX_BED_TEMP_CALIBRATION 50
 #define MAX_HOTEND_TEMP_CALIBRATION 50
-
-#define MAX_E_STEPS_PER_UNIT 250
-#define MIN_E_STEPS_PER_UNIT 100
 
 #define Z_BABYSTEP_MIN -3999
 #define Z_BABYSTEP_MAX 0

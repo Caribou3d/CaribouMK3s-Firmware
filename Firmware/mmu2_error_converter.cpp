@@ -53,6 +53,8 @@ uint8_t PrusaErrorCodeIndex(uint16_t ec) {
         return FindErrorIndex(ERR_MECHANICAL_LOAD_TO_EXTRUDER_FAILED);
     case (uint16_t)ErrorCode::FILAMENT_EJECTED:
         return FindErrorIndex(ERR_SYSTEM_FILAMENT_EJECTED);
+    case (uint16_t)ErrorCode::FILAMENT_CHANGE:
+        return FindErrorIndex(ERR_SYSTEM_FILAMENT_CHANGE);
 
     case (uint16_t)ErrorCode::STALLED_PULLEY:
     case (uint16_t)ErrorCode::MOVE_PULLEY_FAILED:
@@ -205,9 +207,7 @@ Buttons ButtonAvailable(uint16_t ec) {
     case ERR_MECHANICAL_FSENSOR_FILAMENT_STUCK:
     case ERR_MECHANICAL_FSENSOR_TOO_EARLY:
     case ERR_MECHANICAL_INSPECT_FINDA:
-    case ERR_MECHANICAL_SELECTOR_CANNOT_HOME:
     case ERR_MECHANICAL_SELECTOR_CANNOT_MOVE:
-    case ERR_MECHANICAL_IDLER_CANNOT_HOME:
     case ERR_MECHANICAL_IDLER_CANNOT_MOVE:
     case ERR_MECHANICAL_PULLEY_CANNOT_MOVE:
     case ERR_SYSTEM_UNLOAD_MANUALLY:
@@ -219,11 +219,33 @@ Buttons ButtonAvailable(uint16_t ec) {
             break;
         }
         break;
+    case ERR_MECHANICAL_SELECTOR_CANNOT_HOME:
+    case ERR_MECHANICAL_IDLER_CANNOT_HOME:
+        switch (buttonSelectedOperation) {
+        // may be allow move selector right and left in the future
+        case ButtonOperations::Tune: // Tune Stallguard threshold
+            return TuneMMU;
+        case ButtonOperations::Retry: // "Repeat action"
+            return Middle;
+        default:
+            break;
+        }
+        break;
     case ERR_MECHANICAL_LOAD_TO_EXTRUDER_FAILED:
     case ERR_SYSTEM_FILAMENT_EJECTED:
         switch (buttonSelectedOperation) {
         case ButtonOperations::Continue: // User solved the serious mechanical problem by hand - there is no other way around
             return Middle;
+        default:
+            break;
+        }
+        break;
+    case ERR_SYSTEM_FILAMENT_CHANGE:
+        switch (buttonSelectedOperation) {
+        case ButtonOperations::Load:
+            return Load;
+        case ButtonOperations::Eject:
+            return Eject;
         default:
             break;
         }
