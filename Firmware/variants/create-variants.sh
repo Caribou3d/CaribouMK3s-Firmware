@@ -56,7 +56,7 @@ TYPE="MK3"
 MOD=""
 BOARD="EINSy10a"
 HEIGHT=210
-BASE="1_75mm_$TYPE-$BOARD-E3Dv6full.h"
+BASE="$TYPE-$BOARD-E3Dv6full.h"
 BMGHeightDiff=-3 #Bondtech extruders are bit higher than stock one
 LGXHeightDiff=6 #Bondtech LGX is shorter than Prusa extruder
 LGXMHeightDiff=-4 #Bondtech LGX is shorter than Prusa extruder
@@ -91,7 +91,7 @@ for COMPANY in ${CompanyArray[@]}; do
 			echo "Unsupported controller"
 			exit 1
 		fi
-		BASE="1_75mm_$TYPE-$BOARD-E3Dv6full.h"
+		BASE="$TYPE-$BOARD-E3Dv6full.h"
 		if [ $COMPANY == "Caribou" ]; then
 			declare -a HeightsArray=( 220 320 420)
 		elif [ $COMPANY == "Prusa" ]; then
@@ -146,7 +146,7 @@ for COMPANY in ${CompanyArray[@]}; do
 	for TYPE in ${TypesMK3Array[@]}; do
 		echo "Type: $TYPE"
 		BOARD="EINSy10a"
-		BASE="1_75mm_$TYPE-$BOARD-E3DREVO.h"
+		BASE="$TYPE-$BOARD-E3DREVO.h"
 		if [ $COMPANY == "Caribou" ]; then
 			declare -a HeightsArray=( 220 320 420)
 		elif [ $COMPANY == "Prusa" ]; then
@@ -202,7 +202,7 @@ for COMPANY in ${CompanyArray[@]}; do
 	for TYPE in ${TypesMK3Array[@]}; do
 		echo "Type: $TYPE"
 		BOARD="EINSy10a"
-		BASE="1_75mm_$TYPE-$BOARD-E3DREVO_HF_60W.h"
+		BASE="$TYPE-$BOARD-E3DREVO_HF_60W.h"
 		if [ $COMPANY == "Caribou" ]; then
 			declare -a HeightsArray=( 220 320 420)
 		elif [ $COMPANY == "Prusa" ]; then
