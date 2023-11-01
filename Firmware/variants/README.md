@@ -9,8 +9,8 @@ There are other 3rd party hotends which the community uses.
 
 Steps to add a new 3rd party hotend:
 
-1. Make a copy of the `/Firmware/variant/1_75mm_MK3S-EINSy10a-E3Dv6full.h` with a new name `1_75mm_MK3S-EINSy10a-<3rd party hotend:16>.h`
-  - Example for the E3D REVO HF 60W: `/Firmware/variant/1_75mm_MK3S-EINSy10a-E3DREVO_HF_60W.h`
+1. Make a copy of the `/Firmware/variant/MK3S-EINSy10a-E3Dv6full.h` with a new name `MK3S-EINSy10a-<3rd party hotend:16>.h`
+  - Example for the E3D REVO HF 60W: `/Firmware/variant/MK3S-EINSy10a-E3DREVO_HF_60W.h`
 2. Open the new variant file.
 3. Search for `#define NOZZLE_TYPE`
 4. Change `"E3Dv6full"` to  `"<3rd party hotend:16>"`

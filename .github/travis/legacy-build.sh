@@ -17,7 +17,6 @@ rm Firmware/Configuration_prusa.h
 cp Firmware/variants/MK25-RAMBo13a.h Firmware/Configuration_prusa.h
 bash -x build.sh || { echo "MK25-RAMBo13a variant failed" && false; }
 rm Firmware/Configuration_prusa.h
-<<<<<<< HEAD
 cp Firmware/variants/1_75mm_MK25-RAMBo10a-E3Dv6full.h Firmware/Configuration_prusa.h
 bash -x build.sh || { echo "1_75mm_MK25-RAMBo10a-E3Dv6full variant failed" && false; }
 cp Firmware/variants/1_75mm_MK3S-EINSy10a-E3DREVO.h Firmware/Configuration_prusa.h
@@ -28,20 +27,4 @@ cp Firmware/variants/1_75mm_MK3S-EINSy10a-E3DREVO_HF_60W.h Firmware/Configuratio
 bash -x build.sh || { echo "1_75mm_MK3S-EINSy10a-E3DREVO_HF_60W variant failed" && false; }
 cp Firmware/variants/1_75mm_MK3-EINSy10a-E3DREVO_HF_60W.h Firmware/Configuration_prusa.h
 bash -x build.sh || { echo "1_75mm_MK3-EINSy10a-E3DREVO_HF_60W variant failed" && false; }
-=======
-cp Firmware/variants/MK25-RAMBo10a.h Firmware/Configuration_prusa.h
-bash -x build.sh || { echo "MK25-RAMBo10a variant failed" && false; }
-rm Firmware/Configuration_prusa.h
-cp Firmware/variants/MK3S-E3DREVO.h Firmware/Configuration_prusa.h
-bash -x build.sh || { echo "MK3S-E3DREVO variant failed" && false; }
-rm Firmware/Configuration_prusa.h
-cp Firmware/variants/MK3-E3DREVO.h Firmware/Configuration_prusa.h
-bash -x build.sh || { echo "MK3-E3DREVO variant failed" && false; }
-rm Firmware/Configuration_prusa.h
-cp Firmware/variants/MK3S-E3DREVO_HF_60W.h Firmware/Configuration_prusa.h
-bash -x build.sh || { echo "MK3S-E3DREVO_HF_60W variant failed" && false; }
-rm Firmware/Configuration_prusa.h
-cp Firmware/variants/MK3-E3DREVO_HF_60W.h Firmware/Configuration_prusa.h
-bash -x build.sh || { echo "MK3-E3DREVO_HF_60W variant failed" && false; }
->>>>>>> v3.13.2
 rm Firmware/Configuration_prusa.h

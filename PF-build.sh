@@ -38,15 +38,15 @@
 #
 # Example for MK3: open git bash and change to your Firmware directory
 # <username>@<machine name> MINGW64 /<drive>/path
-# bash build.sh 1_75mm_MK3-EINSy10a-E3Dv6full
+# bash build.sh MK3-EINSy10a-E3Dv6full
 #
 # Example for MK25: open git bash and change to your directory
 # gussner@WIN01 MINGW64 /d/Data/Prusa-Firmware/MK3
-# bash build.sh 1_75mm_MK25-RAMBo13a-E3Dv6full
+# bash build.sh MK25-RAMBo13a-E3Dv6full
 #
 # The compiled hex files can be found in the folder above like from the example
 # gussner@WIN01 MINGW64 /d/Data/Prusa-Firmware
-# FW351-Build1778-1_75mm_MK25-RAMBo13a-E3Dv6full.hex
+# FW351-Build1778-MK25-RAMBo13a-E3Dv6full.hex
 #
 # Why make Arduino IDE portable?
 # To have a distinguished Prusa Firmware build environment I decided to use Arduino IDE in portable mode.
@@ -84,7 +84,7 @@
 # 15 Feb 2019, 3d-gussner, Added some colored output
 # 15 Feb 2019, 3d-gussner, troubleshooting and minor fixes
 # 16 Feb 2019, 3d-gussner, Script can be run using arguments
-#                          $1 = variant, example "1_75mm_MK3-EINSy10a-E3Dv6full.h" at this moment it is not possible to use ALL
+#                          $1 = variant, example "MK3-EINSy10a-E3Dv6full.h" at this moment it is not possible to use ALL
 #                          $2 = multi language OR English only [ALL/EN_FARM]
 #                          $3 = development status [GOLD/RC/BETA/ALPHA/DEVEL/DEBUG]
 #                          If one argument is wrong a list of valid one will be shown
@@ -304,7 +304,7 @@ echo "Example:"
 echo "  $(tput setaf 2)./PF-build.sh -v All -l ALL -d GOLD$(tput sgr0)"
 echo "  Will build all variants as multi language and final GOLD version"
 echo
-echo "  $(tput setaf 2) ./PF-build.sh -v 1_75mm_MK3S-EINSy10a-E3Dv6full.h -b Auto -l ALL -d GOLD -o 1 -c 1 -p 1 -n 1$(tput sgr0)"
+echo "  $(tput setaf 2) ./PF-build.sh -v MK3S-EINSy10a-E3Dv6full.h -b Auto -l ALL -d GOLD -o 1 -c 1 -p 1 -n 1$(tput sgr0)"
 echo "  Will build MK3S multi language final GOLD firmware "
 echo "  with current commit count number and output extra information,"
 echo "  not delete lang build temporary files, keep Configuration_prusa.h and build with new fresh build folder."
