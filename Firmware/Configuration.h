@@ -29,7 +29,8 @@ extern const char _sPrinterMmuName[] PROGMEM;
 #endif
 
 #define FW_COMMIT_NR 8178
-#define FW_COMMIT_HASH "ae3842ec"
+
+#define FW_COMMIT_HASH "53399e21"
 
 // FW_VERSION_UNKNOWN means this is an unofficial build.
 // The firmware should only be checked into github with this symbol.
