@@ -21,13 +21,11 @@ extern const char _sPrinterMmuName[] PROGMEM;
 #define FW_MAJOR 3
 #define FW_MINOR 13
 #define FW_REVISION 4
-#define FW_COMMIT_NR 8500
-#define FW_COMMIT_HASH "904bdcca"
+#define FW_COMMIT_NR 8689
+#define FW_COMMIT_HASH ""
 //#define FW_FLAVOR BETA      //uncomment if DEV, ALPHA, BETA or RC
 //#define FW_FLAVERSION 1     //uncomment if FW_FLAVOR is defined and versioning is needed. Limited to max 8.
 #endif
-
-#define FW_COMMIT_NR 8500
 
 #ifndef FW_FLAVOR
     #define FW_TWEAK (FIRMWARE_REVISION_RELEASED)
@@ -42,8 +40,8 @@ extern const char _sPrinterMmuName[] PROGMEM;
 
 // The full version string and repository source are set via cmake
 #ifndef CMAKE_CONTROL
-#define FW_COMMIT_HASH "904bdcca"
-#define FW_COMMIT_HASH "904bdcca"
+#define FW_COMMIT_HASH ""
+#define FW_COMMIT_HASH ""
 #define FW_REPOSITORY "Unknown"
 #endif
 

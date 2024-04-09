@@ -1112,14 +1112,14 @@ prepare_hex_folders()
 
     #Check if exactly the same hexfile already exists
     if [[ -f "$SCRIPT_PATH/../$OUTPUT_FOLDER/$OUTPUT_FILENAME.hex"  &&  "$LANGUAGES" == "ALL" ]]; then
-        echo ""
+        echo
         ls -1 $SCRIPT_PATH/../$OUTPUT_FOLDER/$OUTPUT_FILENAME.hex | xargs -n1 basename
         echo "$(tput setaf 6)This hex file to be compiled already exists! To cancel this process press CRTL+C and rename existing hex file.$(tput sgr 0)"
         if [ $OUTPUT == "1" ] ; then
             read -t 10 -p "Press Enter to continue..."
         fi
     elif [[ -f "$SCRIPT_PATH/../$OUTPUT_FOLDER/$OUTPUT_FILENAME-EN.hex"  &&  "$LANGUAGES" == "EN_FARM" ]]; then
-        echo ""
+        echo
         ls -1 $SCRIPT_PATH/../$OUTPUT_FOLDER/$OUTPUT_FILENAME-EN.hex | xargs -n1 basename
         echo "$(tput setaf 6)This hex file to be compiled already exists! To cancel this process press CRTL+C and rename existing hex file.$(tput sgr 0)"
         if [ $OUTPUT == "1" ] ; then
@@ -1127,7 +1127,7 @@ prepare_hex_folders()
         fi
     fi
     if [[ -f "$SCRIPT_PATH/../$OUTPUT_FOLDER/$OUTPUT_FILENAME.zip"  &&  "$LANGUAGES" == "ALL" ]]; then
-        echo ""
+        echo
         ls -1 $SCRIPT_PATH/../$OUTPUT_FOLDER/$OUTPUT_FILENAME.zip | xargs -n1 basename
         echo "$(tput setaf 6)This zip file to be compiled already exists! To cancel this process press CRTL+C and rename existing hex file.$(tput sgr 0)"
         if [ $OUTPUT == "1" ] ; then
@@ -1184,11 +1184,11 @@ prepare_variant_for_compiling()
     #Prepare English only or multi-language version to be build
     if [ $LANGUAGES == "EN_FARM" ]; then
         echo " "
-        echo "English only language firmware will be built"
+        echo "$(tput setaf 2)English only language firmware will be built$(tput sgr 0)"
         sed -i -- "s/^#define LANG_MODE *1/#define LANG_MODE              0/g" $SCRIPT_PATH/Firmware/config.h
     else
         echo " "
-        echo "Multi-language firmware will be built"
+        echo "$(tput setaf 2)Multi-language firmware will be built$(tput sgr 0)"
         sed -i -- "s/^#define LANG_MODE *0/#define LANG_MODE              1/g" $SCRIPT_PATH/Firmware/config.h
     fi
 
@@ -1300,7 +1300,6 @@ compile_en_firmware()
 
     echo
     #read -t 5 -p "Press Enter..."
-    echo
 
     echo "Starting to build Caribou firmware using variant $VARIANT$(tput setaf 3) ..."
     if [ $OUTPUT == "1" ] ; then
