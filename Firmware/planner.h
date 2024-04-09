@@ -266,7 +266,7 @@ extern bool planner_aborted;
 #ifdef PREVENT_DANGEROUS_EXTRUDE
 extern int extrude_min_temp;
 void set_extrude_min_temp(int temp);
-#endif
+#endif //PREVENT_DANGEROUS_EXTRUDE
 
 void reset_acceleration_rates();
 #endif

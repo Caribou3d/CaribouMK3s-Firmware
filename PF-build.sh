@@ -1056,9 +1056,10 @@ prepare_code_for_compiling()
     else
         # Find and replace build version in Configuration.h file
         BUILD_ORG=$(grep --max-count=1 "\bFW_COMMIT_NR\b" $SCRIPT_PATH/Firmware/Configuration.h | sed -e's/  */ /g'|cut -d ' ' -f3)
+        echo "Original build number: $BUILD_ORG"
         if [ "$BUILD_ORG" != "$BUILD" ]; then
             echo "New build number     : $BUILD"
-            sed -i -- "s/^#define FW_COMMIT_NR.*/#define FW_COMMIT_NR $BUILD/g" $SCRIPT_PATH/Firmware/Configuration.h
+            sed -i -- "s/^#define FW_COMMITNR.*/#define FW_COMMIT_NR $BUILD/g" $SCRIPT_PATH/Firmware/Configuration.h
         fi
     fi
     # Check if the motherboard is an EINSY and if so only one hex file will generated
@@ -1185,12 +1186,10 @@ prepare_variant_for_compiling()
         echo " "
         echo "English only language firmware will be built"
         sed -i -- "s/^#define LANG_MODE *1/#define LANG_MODE              0/g" $SCRIPT_PATH/Firmware/config.h
-        echo " "
     else
         echo " "
         echo "Multi-language firmware will be built"
         sed -i -- "s/^#define LANG_MODE *0/#define LANG_MODE              1/g" $SCRIPT_PATH/Firmware/config.h
-        echo " "
     fi
 
     #Check if compiler flags are set to Prusa specific needs for the rambo board.

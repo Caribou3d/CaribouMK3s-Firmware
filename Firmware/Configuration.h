@@ -14,29 +14,38 @@ extern const char _sPrinterName[] PROGMEM;
 extern const uint16_t _nPrinterMmuType;
 extern const char _sPrinterMmuName[] PROGMEM;
 
-/// Firmware version
+// Firmware version.
+// NOTE: These are ONLY used if you are not building via cmake and/or not in a git repository.
+// Otherwise the repository information takes precedence.
+#ifndef CMAKE_CONTROL
 #define FW_MAJOR 3
 #define FW_MINOR 13
-#define FW_REVISION 3
-//#define FW_FLAVOR RC      //uncomment if DEBUG, DEVEL, ALPHA, BETA or RC
+#define FW_REVISION 4
+#define FW_COMMIT_NR 8500
+#define FW_COMMIT_HASH "904bdcca"
+//#define FW_FLAVOR BETA      //uncomment if DEV, ALPHA, BETA or RC
 //#define FW_FLAVERSION 1     //uncomment if FW_FLAVOR is defined and versioning is needed. Limited to max 8.
+#endif
+
+#define FW_COMMIT_NR 8500
+
 #ifndef FW_FLAVOR
     #define FW_TWEAK (FIRMWARE_REVISION_RELEASED)
     #define FW_VERSION STR(FW_MAJOR) "." STR(FW_MINOR) "." STR(FW_REVISION)
+    #define FW_VERSION_FULL STR(FW_MAJOR) "." STR(FW_MINOR) "." STR(FW_REVISION) "-" STR(FW_COMMITNR)
 #else
+    // Construct the TWEAK value as it is expected from the enum.
     #define FW_TWEAK (CONCAT(FIRMWARE_REVISION_,FW_FLAVOR) + FW_FLAVERSION)
     #define FW_VERSION STR(FW_MAJOR) "." STR(FW_MINOR) "." STR(FW_REVISION) "-" STR(FW_FLAVOR) "" STR(FW_FLAVERSION)
+    #define FW_VERSION_FULL STR(FW_MAJOR) "." STR(FW_MINOR) "." STR(FW_REVISION) "-" STR(FW_FLAVOR) "" STR(FW_FLAVERSION) "+" STR(FW_COMMITNR)
 #endif
 
-#define FW_COMMIT_NR 8178
-
-#define FW_COMMIT_HASH "53399e21"
-
-// FW_VERSION_UNKNOWN means this is an unofficial build.
-// The firmware should only be checked into github with this symbol.
-#define FW_DEV_VERSION FW_VERSION_UNKNOWN
+// The full version string and repository source are set via cmake
+#ifndef CMAKE_CONTROL
+#define FW_COMMIT_HASH "904bdcca"
+#define FW_COMMIT_HASH "904bdcca"
 #define FW_REPOSITORY "Unknown"
-#define FW_VERSION_FULL FW_VERSION "-" STR(FW_COMMIT_NR)
+#endif
 
 // G-code language level
 #define GCODE_LEVEL 1

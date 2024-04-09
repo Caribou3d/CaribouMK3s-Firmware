@@ -123,7 +123,7 @@ static uint8_t g_cntr_planner_queue_min = 0;
 //===========================================================================
 #ifdef PREVENT_DANGEROUS_EXTRUDE
 int extrude_min_temp = EXTRUDE_MINTEMP;
-#endif
+#endif //PREVENT_DANGEROUS_EXTRUDE
 
 #ifdef LIN_ADVANCE
 float extruder_advance_K = LA_K_DEF;
@@ -856,7 +856,7 @@ void plan_buffer_line(float x, float y, float z, const float &e, float feed_rate
     }
     #endif
   }
-  #endif
+  #endif //PREVENT_DANGEROUS_EXTRUDE
 
   // Number of steps for each axis
 #ifndef COREXY
@@ -1364,7 +1364,7 @@ void set_extrude_min_temp(int temp)
 {
   extrude_min_temp = temp;
 }
-#endif
+#endif //PREVENT_DANGEROUS_EXTRUDE
 
 // Calculate the steps/s^2 acceleration rates, based on the mm/s^s
 void reset_acceleration_rates()
