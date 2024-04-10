@@ -407,7 +407,7 @@ function(add_base_binary variant_name)
             FW_MAJOR=${PROJECT_VERSION_MAJOR}
             FW_MINOR=${PROJECT_VERSION_MINOR}
             FW_REVISION=${PROJECT_VERSION_REV}
-            FW_COMMITNR=${PROJECT_VERSION_COMMIT}
+            FW_COMMIT_NR=${PROJECT_VERSION_COMMIT}
     )
     if(NOT PROJECT_VERSION_FLV STREQUAL "RELEASED")
         target_compile_definitions(

@@ -1059,7 +1059,7 @@ prepare_code_for_compiling()
         echo "Original build number: $BUILD_ORG"
         if [ "$BUILD_ORG" != "$BUILD" ]; then
             echo "New build number     : $BUILD"
-            sed -i -- "s/^#define FW_COMMITNR.*/#define FW_COMMIT_NR $BUILD/g" $SCRIPT_PATH/Firmware/Configuration.h
+            sed -i -- "s/^#define FW_COMMIT_NR.*/#define FW_COMMIT_NR $BUILD/g" $SCRIPT_PATH/Firmware/Configuration.h
         fi
     fi
     # Check if the motherboard is an EINSY and if so only one hex file will generated

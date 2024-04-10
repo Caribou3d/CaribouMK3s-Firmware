@@ -6577,7 +6577,7 @@ Sigma_Exit:
           SERIAL_ECHOPGM("FIRMWARE_NAME:Prusa-Firmware ");
           SERIAL_ECHORPGM(FW_VERSION_STR_P());
           SERIAL_ECHOPGM("+");
-          SERIAL_ECHOPGM(STR(FW_COMMITNR));
+          SERIAL_ECHOPGM(STR(FW_COMMIT_NR));
           SERIAL_ECHOPGM("_");
           SERIAL_ECHOPGM(FW_COMMIT_HASH);
           SERIAL_ECHOPGM(" based on Marlin FIRMWARE_URL:https://github.com/prusa3d/Prusa-Firmware PROTOCOL_VERSION:");
