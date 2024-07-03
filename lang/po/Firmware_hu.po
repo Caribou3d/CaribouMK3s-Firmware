@@ -861,7 +861,7 @@ msgid "Heating"
 msgstr "Futes folyamatban"
 
 #. MSG_BED_HEATING_SAFETY_DISABLED c=20 r=4
-#: ../../Firmware/Marlin_main.cpp:9647 ../../Firmware/messages.cpp:211
+#: ../../Firmware/Marlin_main.cpp:9648 ../../Firmware/messages.cpp:211
 msgid "Heating disabled by safety timer."
 msgstr "A bizonsagi idozito leallitotta a futest"
 
@@ -1199,7 +1199,7 @@ msgid "Mesh Bed Leveling"
 msgstr "Asztal szintezes"
 
 #. MSG_MODE c=6
-#: ../../Firmware/Marlin_main.cpp:8495 ../../Firmware/messages.cpp:117
+#: ../../Firmware/Marlin_main.cpp:8496 ../../Firmware/messages.cpp:117
 #: ../../Firmware/ultralcd.cpp:4128 ../../Firmware/ultralcd.cpp:4132
 #: ../../Firmware/ultralcd.cpp:4140 ../../Firmware/ultralcd.cpp:4144
 #: ../../Firmware/ultralcd.cpp:4152 ../../Firmware/ultralcd.cpp:4155
@@ -1308,7 +1308,7 @@ msgid "None"
 msgstr "Nincs"
 
 #. MSG_NORMAL c=7
-#: ../../Firmware/Marlin_main.cpp:8497 ../../Firmware/messages.cpp:121
+#: ../../Firmware/Marlin_main.cpp:8498 ../../Firmware/messages.cpp:121
 #: ../../Firmware/ultralcd.cpp:4096 ../../Firmware/ultralcd.cpp:4132
 #: ../../Firmware/ultralcd.cpp:4511
 msgid "Normal"
@@ -1406,7 +1406,7 @@ msgid "Once"
 msgstr "Egyszer"
 
 #. MSG_PAUSED_THERMAL_ERROR c=20
-#: ../../Firmware/Marlin_main.cpp:9861 ../../Firmware/messages.cpp:186
+#: ../../Firmware/Marlin_main.cpp:9862 ../../Firmware/messages.cpp:186
 msgid "PAUSED THERMAL ERROR"
 msgstr "SZUNET HOMERSEK.HIBA"
 
@@ -1553,7 +1553,7 @@ msgid "Please place steel sheet on heatbed."
 msgstr "Kerlek, helyzed az acellapot a targyasztalra."
 
 #. MSG_PRESS_TO_UNLOAD c=20 r=4
-#: ../../Firmware/Marlin_main.cpp:11215 ../../Firmware/Marlin_main.cpp:11245
+#: ../../Firmware/Marlin_main.cpp:11216 ../../Firmware/Marlin_main.cpp:11246
 #: ../../Firmware/messages.cpp:84
 msgid "Please press the knob to unload filament"
 msgstr "Kerlek, nyomd meg a gombot a filament kiadasahoz"
@@ -1590,7 +1590,7 @@ msgid "Please upgrade."
 msgstr "Kerlek frissits."
 
 #. MSG_PLEASE_WAIT c=20
-#: ../../Firmware/Marlin_main.cpp:3521 ../../Firmware/Marlin_main.cpp:8090
+#: ../../Firmware/Marlin_main.cpp:3521 ../../Firmware/Marlin_main.cpp:8091
 #: ../../Firmware/messages.cpp:81 ../../Firmware/ultralcd.cpp:2179
 #: ../../Firmware/ultralcd.cpp:2190
 msgid "Please wait"
@@ -1650,7 +1650,7 @@ msgid "Press the knob"
 msgstr "Nyomd meg a gombot"
 
 #. MSG_PRESS_TO_PREHEAT c=20 r=4
-#: ../../Firmware/Marlin_main.cpp:11227 ../../Firmware/messages.cpp:212
+#: ../../Firmware/Marlin_main.cpp:11228 ../../Firmware/messages.cpp:212
 msgid "Press the knob to preheat nozzle and continue."
 msgstr "Nyomd meg a gombot a folytatashoz es a fuvoka felfutesehez."
 
@@ -1829,7 +1829,7 @@ msgid "SELECTOR CANNOT MOVE"
 msgstr "SZELEKTOR NEM MOZOG"
 
 #. MSG_STOPPED c=20
-#: ../../Firmware/Marlin_main.cpp:9887 ../../Firmware/messages.cpp:125
+#: ../../Firmware/Marlin_main.cpp:9888 ../../Firmware/messages.cpp:125
 msgid "STOPPED."
 msgstr "MEGALLITVA."
 
@@ -1967,7 +1967,7 @@ msgid "Show end stops"
 msgstr "Vegallaskapcsolok"
 
 #. MSG_SILENT c=7
-#: ../../Firmware/Marlin_main.cpp:8497 ../../Firmware/messages.cpp:120
+#: ../../Firmware/Marlin_main.cpp:8498 ../../Firmware/messages.cpp:120
 #: ../../Firmware/ultralcd.cpp:4155 ../../Firmware/ultralcd.cpp:4194
 msgid "Silent"
 msgstr "Halk"

@@ -863,7 +863,7 @@ msgid "Heating"
 msgstr "Opwarmen"
 
 #. MSG_BED_HEATING_SAFETY_DISABLED c=20 r=4
-#: ../../Firmware/Marlin_main.cpp:9647 ../../Firmware/messages.cpp:211
+#: ../../Firmware/Marlin_main.cpp:9648 ../../Firmware/messages.cpp:211
 msgid "Heating disabled by safety timer."
 msgstr "Verwarming uitgeschakeld door veiligheidstimer."
 
@@ -1201,7 +1201,7 @@ msgid "Mesh Bed Leveling"
 msgstr "Mesh bed Leveling"
 
 #. MSG_MODE c=6
-#: ../../Firmware/Marlin_main.cpp:8495 ../../Firmware/messages.cpp:117
+#: ../../Firmware/Marlin_main.cpp:8496 ../../Firmware/messages.cpp:117
 #: ../../Firmware/ultralcd.cpp:4128 ../../Firmware/ultralcd.cpp:4132
 #: ../../Firmware/ultralcd.cpp:4140 ../../Firmware/ultralcd.cpp:4144
 #: ../../Firmware/ultralcd.cpp:4152 ../../Firmware/ultralcd.cpp:4155
@@ -1310,7 +1310,7 @@ msgid "None"
 msgstr "Geen"
 
 #. MSG_NORMAL c=7
-#: ../../Firmware/Marlin_main.cpp:8497 ../../Firmware/messages.cpp:121
+#: ../../Firmware/Marlin_main.cpp:8498 ../../Firmware/messages.cpp:121
 #: ../../Firmware/ultralcd.cpp:4096 ../../Firmware/ultralcd.cpp:4132
 #: ../../Firmware/ultralcd.cpp:4511
 msgid "Normal"
@@ -1408,7 +1408,7 @@ msgid "Once"
 msgstr "Eenmaal"
 
 #. MSG_PAUSED_THERMAL_ERROR c=20
-#: ../../Firmware/Marlin_main.cpp:9861 ../../Firmware/messages.cpp:186
+#: ../../Firmware/Marlin_main.cpp:9862 ../../Firmware/messages.cpp:186
 msgid "PAUSED THERMAL ERROR"
 msgstr "PAUSE TERMISCHE FOUT"
 
@@ -1555,7 +1555,7 @@ msgid "Please place steel sheet on heatbed."
 msgstr "Leg staalplaat op bed."
 
 #. MSG_PRESS_TO_UNLOAD c=20 r=4
-#: ../../Firmware/Marlin_main.cpp:11215 ../../Firmware/Marlin_main.cpp:11245
+#: ../../Firmware/Marlin_main.cpp:11216 ../../Firmware/Marlin_main.cpp:11246
 #: ../../Firmware/messages.cpp:84
 msgid "Please press the knob to unload filament"
 msgstr "Druk op de knop om filament te verwijderen"
@@ -1592,7 +1592,7 @@ msgid "Please upgrade."
 msgstr "Voer een upgrade uit"
 
 #. MSG_PLEASE_WAIT c=20
-#: ../../Firmware/Marlin_main.cpp:3521 ../../Firmware/Marlin_main.cpp:8090
+#: ../../Firmware/Marlin_main.cpp:3521 ../../Firmware/Marlin_main.cpp:8091
 #: ../../Firmware/messages.cpp:81 ../../Firmware/ultralcd.cpp:2179
 #: ../../Firmware/ultralcd.cpp:2190
 msgid "Please wait"
@@ -1652,7 +1652,7 @@ msgid "Press the knob"
 msgstr "Druk op knop"
 
 #. MSG_PRESS_TO_PREHEAT c=20 r=4
-#: ../../Firmware/Marlin_main.cpp:11227 ../../Firmware/messages.cpp:212
+#: ../../Firmware/Marlin_main.cpp:11228 ../../Firmware/messages.cpp:212
 msgid "Press the knob to preheat nozzle and continue."
 msgstr "Druk op de knop om de tuit voor te verwarmen en door te gaan."
 
@@ -1833,7 +1833,7 @@ msgid "SELECTOR CANNOT MOVE"
 msgstr "SELECTOR BEWEG FOUT"
 
 #. MSG_STOPPED c=20
-#: ../../Firmware/Marlin_main.cpp:9887 ../../Firmware/messages.cpp:125
+#: ../../Firmware/Marlin_main.cpp:9888 ../../Firmware/messages.cpp:125
 msgid "STOPPED."
 msgstr "GESTOPT."
 
@@ -1974,7 +1974,7 @@ msgid "Show end stops"
 msgstr "Toon endstops"
 
 #. MSG_SILENT c=7
-#: ../../Firmware/Marlin_main.cpp:8497 ../../Firmware/messages.cpp:120
+#: ../../Firmware/Marlin_main.cpp:8498 ../../Firmware/messages.cpp:120
 #: ../../Firmware/ultralcd.cpp:4155 ../../Firmware/ultralcd.cpp:4194
 msgid "Silent"
 msgstr "Stil"

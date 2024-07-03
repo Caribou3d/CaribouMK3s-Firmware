@@ -464,6 +464,15 @@ void tuneIdlerStallguardThresholdMenu() {
 }
 
 void tuneIdlerStallguardThreshold() {
+    if ((CommandInProgress)mmu2.GetCommandInProgress() != NoCommand)
+    {
+        // Workaround to mitigate an issue where the Tune menu doesn't
+        // work if the MMU is running a command. For example the Idler
+        // homing fails during toolchange.
+        // To save the print, make the Tune button unresponsive for now.
+        return;
+    }
+
     putErrorScreenToSleep = true;
     menu_submenu(tuneIdlerStallguardThresholdMenu);
 }
