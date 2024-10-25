@@ -17,7 +17,7 @@
 #define NOZZLE_TYPE "E3DREVO"
 
 // Printer name
-#define CUSTOM_MENDEL_NAME "Prusa i3 MK3S+R"
+#define CUSTOM_MENDEL_NAME "Prusa i3 MK3S-R"
 
 // WEH002004 OLED Display uncomment WEH002004_OLED if have this kind of display
 #define WEH002004_OLED
@@ -114,7 +114,7 @@
 #define NORMAL_MAX_FEEDRATE_XY   200  // max feedrate in mm/s
 
 //number of bytes from end of the file to start check
-#define END_FILE_SECTION 30720
+#define END_FILE_SECTION 20000
 
 #define Z_AXIS_ALWAYS_ON 1
 
@@ -169,9 +169,7 @@
 #define DEBUG_DCODE6
 
 //#define DEBUG_PULLUP_CRASH //Test Pullup crash
-//#define DEBUG_PRINTER_STATES
 
-//#define DEBUG_EEPROM_CHANGES //Uses +1188 bytes Flash +6 bytes SRAM
 //#define DEBUG_BUILD
 //#define DEBUG_SEC_LANG   //secondary language debug output at startup
 //#define DEBUG_XFLASH   //debug external spi flash
@@ -341,9 +339,6 @@
 // Extrude mintemp
 #define EXTRUDE_MINTEMP 175
 
-// Quick nozzle change supported
-#define QUICK_NOZZLE_CHANGE
-
 // Extruder cooling fans
 #define EXTRUDER_0_AUTO_FAN_PIN   8
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
@@ -378,15 +373,6 @@
 #define FILAMENTCHANGE_RFEED 7000 / 60
 #define FILAMENTCHANGE_EXFEED 2
 #define FILAMENTCHANGE_ZFEED 15
-
-//Retract and then extrude some filament to prevent oozing.
-//After the loading sequence and after a print is canceled, the filament is retracted to get it out of the heat zone of the nozzle.
-//Then a small extrusion is performed to make sure the filament is close enough for the next print without oozing.
-//#define COMMUNITY_PREVENT_OOZE
-#ifdef COMMUNITY_PREVENT_OOZE
-#define FILAMENTCHANGE_COMMUNITY_ROOZEFEED -10 //E retract distance in mm for ooze prevention
-#define FILAMENTCHANGE_COMMUNITY_EOOZEFEED 4 //E extrude distance in mm for ooze prevention
-#endif //End COMMUNITY_PREVENT_OOZE
 
 #endif
 
@@ -423,11 +409,6 @@
 #include "thermal_model/e3d_REVO.h"
 #define THERMAL_MODEL_DEFAULT E3D_REVO // Default E3D REVO model parameters
 
-/*------------------------------------
- HOST FEATURES
- *------------------------------------*/
-
-//#define HOST_SHUTDOWN              //Host supports "//action:shutdown" feature
 
 /*------------------------------------
  MOTOR CURRENT SETTINGS
@@ -445,6 +426,12 @@
 #ifdef MESH_BED_LEVELING
 
 #define MBL_Z_STEP 0.01
+
+// Mesh definitions
+#define MESH_MIN_X 24
+#define MESH_MAX_X 228
+#define MESH_MIN_Y 6
+#define MESH_MAX_Y 210
 
 // Mesh upsample definition
 #define MESH_NUM_X_POINTS 7

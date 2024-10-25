@@ -124,10 +124,10 @@ static const constexpr uint16_t errorCodes[] PROGMEM = {
     ERR_ELECTRICAL_MMU_MCU_ERROR,
     ERR_CONNECT_MMU_NOT_RESPONDING,
     ERR_CONNECT_COMMUNICATION_ERROR,
-    ERR_SYSTEM_FILAMENT_ALREADY_LOADED, 
-    ERR_SYSTEM_INVALID_TOOL, 
-    ERR_SYSTEM_QUEUE_FULL, 
-    ERR_SYSTEM_FW_UPDATE_NEEDED, 
+    ERR_SYSTEM_FILAMENT_ALREADY_LOADED,
+    ERR_SYSTEM_INVALID_TOOL,
+    ERR_SYSTEM_QUEUE_FULL,
+    ERR_SYSTEM_FW_UPDATE_NEEDED,
     ERR_SYSTEM_FW_RUNTIME_ERROR,
     ERR_SYSTEM_UNLOAD_MANUALLY,
     ERR_SYSTEM_FILAMENT_EJECTED,
@@ -287,7 +287,7 @@ static const char MSG_DESC_FILAMENT_CHANGE[] PROGMEM_I1 = ISTR("M600 Filament Ch
 static const char MSG_DESC_UNKNOWN_ERROR[] PROGMEM_I1    = ISTR("Unexpected error occurred."); ////MSG_DESC_UNKNOWN_ERROR c=20 r=8
 
 // Read explanation in mmu2_protocol_logic.cpp -> supportedMmuFWVersion
-static constexpr char MSG_DESC_FW_UPDATE_NEEDED[] PROGMEM_I1 = ISTR("MMU FW version is incompatible with printer FW.Update to version 3.0.2."); ////MSG_DESC_FW_UPDATE_NEEDED c=20 r=8
+static constexpr char MSG_DESC_FW_UPDATE_NEEDED[] PROGMEM_I1 = ISTR("MMU FW version is incompatible with printer FW.Update to version 3.0.3."); ////MSG_DESC_FW_UPDATE_NEEDED c=20 r=8
 static constexpr uint8_t szFWUN = sizeof(MSG_DESC_FW_UPDATE_NEEDED);
 // at least check the individual version characters in MSG_DESC_FW_UPDATE_NEEDED
 static_assert(MSG_DESC_FW_UPDATE_NEEDED[szFWUN - 7] == ('0' + mmuVersionMajor));
@@ -355,7 +355,7 @@ static const char MSG_BTN_RETRY[] PROGMEM_I1 = ISTR("Retry"); ////MSG_BTN_RETRY 
 static const char MSG_BTN_RESET_MMU[] PROGMEM_I1 = ISTR("ResetMMU"); ////MSG_BTN_RESET_MMU c=8
 static const char MSG_BTN_UNLOAD[] PROGMEM_I1 = ISTR("Unload"); ////MSG_BTN_UNLOAD c=8
 static const char MSG_BTN_LOAD[] PROGMEM_I1 = ISTR("Load"); ////MSG_BTN_LOAD c=8
-static const char MSG_BTN_EJECT[] PROGMEM_I1 = ISTR("Eject"); ////MSG_BTN_EJECT c=8
+//static const char MSG_BTN_EJECT[] PROGMEM_I1 = ISTR("Eject"); //Reuse MSG_EJECT c=8
 //static const char MSG_BTN_TUNE_MMU[] PROGMEM_I1 = ISTR("Tune"); //Reuse MSG_TUNE c=8
 static const char MSG_BTN_STOP[] PROGMEM_I1 = ISTR("Stop"); ////MSG_BTN_STOP c=8
 static const char MSG_BTN_DISABLE_MMU[] PROGMEM_I1 = ISTR("Disable"); ////MSG_BTN_DISABLE_MMU c=8
@@ -368,7 +368,7 @@ static const char * const btnOperation[] PROGMEM = {
     _R(MSG_BTN_RESET_MMU),
     _R(MSG_BTN_UNLOAD),
     _R(MSG_BTN_LOAD),
-    _R(MSG_BTN_EJECT),
+    _R(MSG_EJECT),
     _R(MSG_TUNE),
     _R(MSG_BTN_STOP),
     _R(MSG_BTN_DISABLE_MMU),
